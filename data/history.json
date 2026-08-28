@@ -1,0 +1,992 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-08-28T21:44:50+02:00",
+  "updated_at": "2026-08-28T21:44:50+02:00",
+  "events": {
+    "233318": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233318",
+        "datetime": "2026-08-29T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233319": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233319",
+        "datetime": "2026-08-29T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233320": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233320",
+        "datetime": "2026-08-29T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233321": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233321",
+        "datetime": "2026-08-29T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233322": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233322",
+        "datetime": "2026-08-30T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233323": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233323",
+        "datetime": "2026-08-30T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233324": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233324",
+        "datetime": "2026-08-30T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233325": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233325",
+        "datetime": "2026-08-30T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233326": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233326",
+        "datetime": "2026-08-31T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233327": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233327",
+        "datetime": "2026-08-31T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233328": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233328",
+        "datetime": "2026-08-31T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233329": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233329",
+        "datetime": "2026-08-31T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233330": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233330",
+        "datetime": "2026-09-01T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233331": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233331",
+        "datetime": "2026-09-01T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233332": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233332",
+        "datetime": "2026-09-01T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233333": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233333",
+        "datetime": "2026-09-01T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233334": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233334",
+        "datetime": "2026-09-02T11:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233335": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233335",
+        "datetime": "2026-09-02T15:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233336": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233336",
+        "datetime": "2026-09-03T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233337": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233337",
+        "datetime": "2026-09-03T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233338": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233338",
+        "datetime": "2026-09-03T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233340": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233340",
+        "datetime": "2026-09-04T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233341": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233341",
+        "datetime": "2026-09-04T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233342": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233342",
+        "datetime": "2026-09-04T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233343": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233343",
+        "datetime": "2026-09-04T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233344": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233344",
+        "datetime": "2026-09-05T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233345": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233345",
+        "datetime": "2026-09-05T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233346": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233346",
+        "datetime": "2026-09-05T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233347": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233347",
+        "datetime": "2026-09-05T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233348": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233348",
+        "datetime": "2026-09-06T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233349": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233349",
+        "datetime": "2026-09-06T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233350": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233350",
+        "datetime": "2026-09-06T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233351": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233351",
+        "datetime": "2026-09-06T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233352": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233352",
+        "datetime": "2026-09-07T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233353": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233353",
+        "datetime": "2026-09-07T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233354": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233354",
+        "datetime": "2026-09-07T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233355": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233355",
+        "datetime": "2026-09-07T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233356": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233356",
+        "datetime": "2026-09-08T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233357": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233357",
+        "datetime": "2026-09-08T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233358": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233358",
+        "datetime": "2026-09-08T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "233359": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "233359",
+        "datetime": "2026-09-08T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241543": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241543",
+        "datetime": "2026-09-09T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241544": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241544",
+        "datetime": "2026-09-09T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241545": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241545",
+        "datetime": "2026-09-09T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241546": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241546",
+        "datetime": "2026-09-09T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241547": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241547",
+        "datetime": "2026-09-10T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241548": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241548",
+        "datetime": "2026-09-10T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241549": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241549",
+        "datetime": "2026-09-10T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241550": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241550",
+        "datetime": "2026-09-10T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241551": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241551",
+        "datetime": "2026-09-11T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241552": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241552",
+        "datetime": "2026-09-11T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241553": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241553",
+        "datetime": "2026-09-11T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241554": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241554",
+        "datetime": "2026-09-11T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241555": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241555",
+        "datetime": "2026-09-12T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241556": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241556",
+        "datetime": "2026-09-12T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241557": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241557",
+        "datetime": "2026-09-12T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241558": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241558",
+        "datetime": "2026-09-12T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241559": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241559",
+        "datetime": "2026-09-13T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241560": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241560",
+        "datetime": "2026-09-13T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241561": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241561",
+        "datetime": "2026-09-13T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241562": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241562",
+        "datetime": "2026-09-13T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241563": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241563",
+        "datetime": "2026-09-14T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241564": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241564",
+        "datetime": "2026-09-14T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241565": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241565",
+        "datetime": "2026-09-14T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241566": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241566",
+        "datetime": "2026-09-14T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241567": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241567",
+        "datetime": "2026-09-15T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241568": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241568",
+        "datetime": "2026-09-15T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241569": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241569",
+        "datetime": "2026-09-15T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241570": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241570",
+        "datetime": "2026-09-15T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241571": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241571",
+        "datetime": "2026-09-16T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241572": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241572",
+        "datetime": "2026-09-16T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241573": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241573",
+        "datetime": "2026-09-16T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241574": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241574",
+        "datetime": "2026-09-16T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241575": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241575",
+        "datetime": "2026-09-17T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241576": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241576",
+        "datetime": "2026-09-17T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241577": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241577",
+        "datetime": "2026-09-17T16:40:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241578": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241578",
+        "datetime": "2026-09-17T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241579": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241579",
+        "datetime": "2026-09-18T09:00:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241580": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241580",
+        "datetime": "2026-09-18T12:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241581": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241581",
+        "datetime": "2026-09-18T16:50:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    },
+    "241582": {
+      "first_seen_at": "2026-08-28T21:44:50+02:00",
+      "last_known_showing": {
+        "event_id": "241582",
+        "datetime": "2026-09-18T20:30:00+02:00",
+        "auditorium": "IMAX VOLVO",
+        "sold_out": false
+      },
+      "active": true,
+      "disappeared_at": null
+    }
+  },
+  "changes": [
+    {
+      "detected_at": "2026-08-28T21:44:50+02:00",
+      "added_event_ids": [
+        "233318",
+        "233319",
+        "233320",
+        "233321",
+        "233322",
+        "233323",
+        "233324",
+        "233325",
+        "233326",
+        "233327",
+        "233328",
+        "233329",
+        "233330",
+        "233331",
+        "233332",
+        "233333",
+        "233334",
+        "233335",
+        "233336",
+        "233337",
+        "233338",
+        "233340",
+        "233341",
+        "233342",
+        "233343",
+        "233344",
+        "233345",
+        "233346",
+        "233347",
+        "233348",
+        "233349",
+        "233350",
+        "233351",
+        "233352",
+        "233353",
+        "233354",
+        "233355",
+        "233356",
+        "233357",
+        "233358",
+        "233359",
+        "241543",
+        "241544",
+        "241545",
+        "241546",
+        "241547",
+        "241548",
+        "241549",
+        "241550",
+        "241551",
+        "241552",
+        "241553",
+        "241554",
+        "241555",
+        "241556",
+        "241557",
+        "241558",
+        "241559",
+        "241560",
+        "241561",
+        "241562",
+        "241563",
+        "241564",
+        "241565",
+        "241566",
+        "241567",
+        "241568",
+        "241569",
+        "241570",
+        "241571",
+        "241572",
+        "241573",
+        "241574",
+        "241575",
+        "241576",
+        "241577",
+        "241578",
+        "241579",
+        "241580",
+        "241581",
+        "241582"
+      ],
+      "removed_event_ids": [],
+      "previous_latest_showing": null,
+      "current_latest_showing": {
+        "event_id": "241582",
+        "datetime": "2026-09-18T20:30:00+02:00"
+      }
+    }
+  ]
+}

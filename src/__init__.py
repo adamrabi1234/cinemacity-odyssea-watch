@@ -1,0 +1,1 @@
+"""Cinema City Odyssea watcher."""

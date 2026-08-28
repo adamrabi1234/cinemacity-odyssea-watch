@@ -1,0 +1,6285 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-08-28T21:44:50+02:00",
+  "checked_at_utc": "2026-08-28T19:44:50Z",
+  "source": {
+    "name": "Cinema City CZ public JSON API",
+    "api_base": "https://www.cinemacity.cz/cz/data-api-service/v1/quickbook/10101",
+    "live_requests_completed": 24,
+    "until": "9999-12-31",
+    "dates_returned": [
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31",
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18"
+    ]
+  },
+  "query": {
+    "film_name": "Odyssea",
+    "cinema_name_contains": "Praha Flora",
+    "required_attributes": [
+      "70-mm"
+    ],
+    "require_imax": true
+  },
+  "resolved": {
+    "cinema_id": "1052",
+    "cinema_name": "Praha Flora, OC FLORA",
+    "film_ids": [
+      "7268s2r"
+    ]
+  },
+  "matching_showings_count": 81,
+  "latest_showing": {
+    "event_id": "241582",
+    "presentation_code": "241582",
+    "datetime": "2026-09-18T20:30:00+02:00",
+    "event_datetime_api": "2026-09-18T20:30:00",
+    "date": "2026-09-18",
+    "time": "20:30",
+    "business_day": "2026-09-18",
+    "cinema": {
+      "id": "1052",
+      "name": "Praha Flora, OC FLORA"
+    },
+    "auditorium": "IMAX VOLVO",
+    "auditorium_tiny_name": "IMAX",
+    "film": {
+      "id": "7268s2r",
+      "name": "Odyssea",
+      "length_minutes": 180,
+      "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+      "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+      "release_year": "2026",
+      "release_date": "2026-07-16T00:00:00",
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ]
+    },
+    "attributes": [
+      "15-plus",
+      "2d",
+      "70-mm",
+      "drama",
+      "first-subbed-lang-cs",
+      "history",
+      "original-lang-en",
+      "subbed"
+    ],
+    "is_70_mm": true,
+    "is_imax": true,
+    "languages": {
+      "original": [
+        "en"
+      ],
+      "dubbed": [],
+      "voiceover": [],
+      "subtitles": [
+        "cs"
+      ]
+    },
+    "sold_out": false,
+    "availability_ratio": 0.2909,
+    "booking_url": "https://tickets.cinemacity.cz/order/241582",
+    "api_booking_links": {
+      "booking_link": "https://tickets.cinemacity.cz/api/order/241582?lang=cs",
+      "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241582?lang=cs",
+      "composite_booking_link": {
+        "type": "PG",
+        "bookingUrl": {
+          "url": "https://tickets.cinemacity.cz/api/order/241582",
+          "params": {
+            "lang": "cs-CZ"
+          }
+        },
+        "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241582?lang=cs",
+        "blockOnlineSales": false,
+        "blockOnlineSalesUntil": null,
+        "serviceUrl": "https://www.cinemacity.cz/booking"
+      }
+    }
+  },
+  "showings": [
+    {
+      "event_id": "233319",
+      "presentation_code": "233319",
+      "datetime": "2026-08-29T09:00:00+02:00",
+      "event_datetime_api": "2026-08-29T09:00:00",
+      "date": "2026-08-29",
+      "time": "09:00",
+      "business_day": "2026-08-29",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0208,
+      "booking_url": "https://tickets.cinemacity.cz/order/233319",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233319?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233319?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233319",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233319?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233318",
+      "presentation_code": "233318",
+      "datetime": "2026-08-29T12:50:00+02:00",
+      "event_datetime_api": "2026-08-29T12:50:00",
+      "date": "2026-08-29",
+      "time": "12:50",
+      "business_day": "2026-08-29",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0156,
+      "booking_url": "https://tickets.cinemacity.cz/order/233318",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233318?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233318?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233318",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233318?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233320",
+      "presentation_code": "233320",
+      "datetime": "2026-08-29T16:40:00+02:00",
+      "event_datetime_api": "2026-08-29T16:40:00",
+      "date": "2026-08-29",
+      "time": "16:40",
+      "business_day": "2026-08-29",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0156,
+      "booking_url": "https://tickets.cinemacity.cz/order/233320",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233320?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233320?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233320",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233320?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233321",
+      "presentation_code": "233321",
+      "datetime": "2026-08-29T20:30:00+02:00",
+      "event_datetime_api": "2026-08-29T20:30:00",
+      "date": "2026-08-29",
+      "time": "20:30",
+      "business_day": "2026-08-29",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.013,
+      "booking_url": "https://tickets.cinemacity.cz/order/233321",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233321?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233321?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233321",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233321?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233322",
+      "presentation_code": "233322",
+      "datetime": "2026-08-30T09:00:00+02:00",
+      "event_datetime_api": "2026-08-30T09:00:00",
+      "date": "2026-08-30",
+      "time": "09:00",
+      "business_day": "2026-08-30",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0312,
+      "booking_url": "https://tickets.cinemacity.cz/order/233322",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233322?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233322?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233322",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233322?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233323",
+      "presentation_code": "233323",
+      "datetime": "2026-08-30T12:50:00+02:00",
+      "event_datetime_api": "2026-08-30T12:50:00",
+      "date": "2026-08-30",
+      "time": "12:50",
+      "business_day": "2026-08-30",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0182,
+      "booking_url": "https://tickets.cinemacity.cz/order/233323",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233323?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233323?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233323",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233323?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233324",
+      "presentation_code": "233324",
+      "datetime": "2026-08-30T16:40:00+02:00",
+      "event_datetime_api": "2026-08-30T16:40:00",
+      "date": "2026-08-30",
+      "time": "16:40",
+      "business_day": "2026-08-30",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0156,
+      "booking_url": "https://tickets.cinemacity.cz/order/233324",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233324?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233324?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233324",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233324?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233325",
+      "presentation_code": "233325",
+      "datetime": "2026-08-30T20:30:00+02:00",
+      "event_datetime_api": "2026-08-30T20:30:00",
+      "date": "2026-08-30",
+      "time": "20:30",
+      "business_day": "2026-08-30",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0182,
+      "booking_url": "https://tickets.cinemacity.cz/order/233325",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233325?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233325?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233325",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233325?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233326",
+      "presentation_code": "233326",
+      "datetime": "2026-08-31T09:00:00+02:00",
+      "event_datetime_api": "2026-08-31T09:00:00",
+      "date": "2026-08-31",
+      "time": "09:00",
+      "business_day": "2026-08-31",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0909,
+      "booking_url": "https://tickets.cinemacity.cz/order/233326",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233326?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233326?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233326",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233326?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233327",
+      "presentation_code": "233327",
+      "datetime": "2026-08-31T12:50:00+02:00",
+      "event_datetime_api": "2026-08-31T12:50:00",
+      "date": "2026-08-31",
+      "time": "12:50",
+      "business_day": "2026-08-31",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0701,
+      "booking_url": "https://tickets.cinemacity.cz/order/233327",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233327?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233327?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233327",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233327?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233328",
+      "presentation_code": "233328",
+      "datetime": "2026-08-31T16:40:00+02:00",
+      "event_datetime_api": "2026-08-31T16:40:00",
+      "date": "2026-08-31",
+      "time": "16:40",
+      "business_day": "2026-08-31",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0338,
+      "booking_url": "https://tickets.cinemacity.cz/order/233328",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233328?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233328?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233328",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233328?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233329",
+      "presentation_code": "233329",
+      "datetime": "2026-08-31T20:30:00+02:00",
+      "event_datetime_api": "2026-08-31T20:30:00",
+      "date": "2026-08-31",
+      "time": "20:30",
+      "business_day": "2026-08-31",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0338,
+      "booking_url": "https://tickets.cinemacity.cz/order/233329",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233329?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233329?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233329",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233329?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233330",
+      "presentation_code": "233330",
+      "datetime": "2026-09-01T09:00:00+02:00",
+      "event_datetime_api": "2026-09-01T09:00:00",
+      "date": "2026-09-01",
+      "time": "09:00",
+      "business_day": "2026-09-01",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.1948,
+      "booking_url": "https://tickets.cinemacity.cz/order/233330",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233330?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233330?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233330",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233330?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233331",
+      "presentation_code": "233331",
+      "datetime": "2026-09-01T12:50:00+02:00",
+      "event_datetime_api": "2026-09-01T12:50:00",
+      "date": "2026-09-01",
+      "time": "12:50",
+      "business_day": "2026-09-01",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.1273,
+      "booking_url": "https://tickets.cinemacity.cz/order/233331",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233331?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233331?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233331",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233331?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233332",
+      "presentation_code": "233332",
+      "datetime": "2026-09-01T16:40:00+02:00",
+      "event_datetime_api": "2026-09-01T16:40:00",
+      "date": "2026-09-01",
+      "time": "16:40",
+      "business_day": "2026-09-01",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0649,
+      "booking_url": "https://tickets.cinemacity.cz/order/233332",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233332?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233332?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233332",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233332?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233333",
+      "presentation_code": "233333",
+      "datetime": "2026-09-01T20:30:00+02:00",
+      "event_datetime_api": "2026-09-01T20:30:00",
+      "date": "2026-09-01",
+      "time": "20:30",
+      "business_day": "2026-09-01",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0623,
+      "booking_url": "https://tickets.cinemacity.cz/order/233333",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233333?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233333?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233333",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233333?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233334",
+      "presentation_code": "233334",
+      "datetime": "2026-09-02T11:00:00+02:00",
+      "event_datetime_api": "2026-09-02T11:00:00",
+      "date": "2026-09-02",
+      "time": "11:00",
+      "business_day": "2026-09-02",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.1299,
+      "booking_url": "https://tickets.cinemacity.cz/order/233334",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233334?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233334?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233334",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233334?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233335",
+      "presentation_code": "233335",
+      "datetime": "2026-09-02T15:00:00+02:00",
+      "event_datetime_api": "2026-09-02T15:00:00",
+      "date": "2026-09-02",
+      "time": "15:00",
+      "business_day": "2026-09-02",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.1091,
+      "booking_url": "https://tickets.cinemacity.cz/order/233335",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233335?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233335?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233335",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233335?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233336",
+      "presentation_code": "233336",
+      "datetime": "2026-09-03T09:00:00+02:00",
+      "event_datetime_api": "2026-09-03T09:00:00",
+      "date": "2026-09-03",
+      "time": "09:00",
+      "business_day": "2026-09-03",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.2,
+      "booking_url": "https://tickets.cinemacity.cz/order/233336",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233336?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233336?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233336",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233336?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233337",
+      "presentation_code": "233337",
+      "datetime": "2026-09-03T12:50:00+02:00",
+      "event_datetime_api": "2026-09-03T12:50:00",
+      "date": "2026-09-03",
+      "time": "12:50",
+      "business_day": "2026-09-03",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.1506,
+      "booking_url": "https://tickets.cinemacity.cz/order/233337",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233337?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233337?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233337",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233337?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233338",
+      "presentation_code": "233338",
+      "datetime": "2026-09-03T16:40:00+02:00",
+      "event_datetime_api": "2026-09-03T16:40:00",
+      "date": "2026-09-03",
+      "time": "16:40",
+      "business_day": "2026-09-03",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0727,
+      "booking_url": "https://tickets.cinemacity.cz/order/233338",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233338?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233338?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233338",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233338?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233340",
+      "presentation_code": "233340",
+      "datetime": "2026-09-04T09:00:00+02:00",
+      "event_datetime_api": "2026-09-04T09:00:00",
+      "date": "2026-09-04",
+      "time": "09:00",
+      "business_day": "2026-09-04",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.2208,
+      "booking_url": "https://tickets.cinemacity.cz/order/233340",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233340?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233340?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233340",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233340?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233341",
+      "presentation_code": "233341",
+      "datetime": "2026-09-04T12:50:00+02:00",
+      "event_datetime_api": "2026-09-04T12:50:00",
+      "date": "2026-09-04",
+      "time": "12:50",
+      "business_day": "2026-09-04",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.1351,
+      "booking_url": "https://tickets.cinemacity.cz/order/233341",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233341?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233341?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233341",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233341?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233342",
+      "presentation_code": "233342",
+      "datetime": "2026-09-04T16:40:00+02:00",
+      "event_datetime_api": "2026-09-04T16:40:00",
+      "date": "2026-09-04",
+      "time": "16:40",
+      "business_day": "2026-09-04",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0831,
+      "booking_url": "https://tickets.cinemacity.cz/order/233342",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233342?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233342?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233342",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233342?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233343",
+      "presentation_code": "233343",
+      "datetime": "2026-09-04T20:30:00+02:00",
+      "event_datetime_api": "2026-09-04T20:30:00",
+      "date": "2026-09-04",
+      "time": "20:30",
+      "business_day": "2026-09-04",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.039,
+      "booking_url": "https://tickets.cinemacity.cz/order/233343",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233343?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233343?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233343",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233343?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233344",
+      "presentation_code": "233344",
+      "datetime": "2026-09-05T09:00:00+02:00",
+      "event_datetime_api": "2026-09-05T09:00:00",
+      "date": "2026-09-05",
+      "time": "09:00",
+      "business_day": "2026-09-05",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0701,
+      "booking_url": "https://tickets.cinemacity.cz/order/233344",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233344?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233344?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233344",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233344?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233345",
+      "presentation_code": "233345",
+      "datetime": "2026-09-05T12:50:00+02:00",
+      "event_datetime_api": "2026-09-05T12:50:00",
+      "date": "2026-09-05",
+      "time": "12:50",
+      "business_day": "2026-09-05",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0779,
+      "booking_url": "https://tickets.cinemacity.cz/order/233345",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233345?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233345?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233345",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233345?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233346",
+      "presentation_code": "233346",
+      "datetime": "2026-09-05T16:40:00+02:00",
+      "event_datetime_api": "2026-09-05T16:40:00",
+      "date": "2026-09-05",
+      "time": "16:40",
+      "business_day": "2026-09-05",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0208,
+      "booking_url": "https://tickets.cinemacity.cz/order/233346",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233346?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233346?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233346",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233346?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233347",
+      "presentation_code": "233347",
+      "datetime": "2026-09-05T20:30:00+02:00",
+      "event_datetime_api": "2026-09-05T20:30:00",
+      "date": "2026-09-05",
+      "time": "20:30",
+      "business_day": "2026-09-05",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0753,
+      "booking_url": "https://tickets.cinemacity.cz/order/233347",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233347?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233347?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233347",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233347?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233348",
+      "presentation_code": "233348",
+      "datetime": "2026-09-06T09:00:00+02:00",
+      "event_datetime_api": "2026-09-06T09:00:00",
+      "date": "2026-09-06",
+      "time": "09:00",
+      "business_day": "2026-09-06",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.1195,
+      "booking_url": "https://tickets.cinemacity.cz/order/233348",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233348?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233348?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233348",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233348?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233349",
+      "presentation_code": "233349",
+      "datetime": "2026-09-06T12:50:00+02:00",
+      "event_datetime_api": "2026-09-06T12:50:00",
+      "date": "2026-09-06",
+      "time": "12:50",
+      "business_day": "2026-09-06",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0675,
+      "booking_url": "https://tickets.cinemacity.cz/order/233349",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233349?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233349?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233349",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233349?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233350",
+      "presentation_code": "233350",
+      "datetime": "2026-09-06T16:40:00+02:00",
+      "event_datetime_api": "2026-09-06T16:40:00",
+      "date": "2026-09-06",
+      "time": "16:40",
+      "business_day": "2026-09-06",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0416,
+      "booking_url": "https://tickets.cinemacity.cz/order/233350",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233350?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233350?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233350",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233350?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233351",
+      "presentation_code": "233351",
+      "datetime": "2026-09-06T20:30:00+02:00",
+      "event_datetime_api": "2026-09-06T20:30:00",
+      "date": "2026-09-06",
+      "time": "20:30",
+      "business_day": "2026-09-06",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0909,
+      "booking_url": "https://tickets.cinemacity.cz/order/233351",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233351?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233351?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233351",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233351?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233352",
+      "presentation_code": "233352",
+      "datetime": "2026-09-07T09:00:00+02:00",
+      "event_datetime_api": "2026-09-07T09:00:00",
+      "date": "2026-09-07",
+      "time": "09:00",
+      "business_day": "2026-09-07",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.2026,
+      "booking_url": "https://tickets.cinemacity.cz/order/233352",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233352?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233352?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233352",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233352?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233353",
+      "presentation_code": "233353",
+      "datetime": "2026-09-07T12:50:00+02:00",
+      "event_datetime_api": "2026-09-07T12:50:00",
+      "date": "2026-09-07",
+      "time": "12:50",
+      "business_day": "2026-09-07",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.1896,
+      "booking_url": "https://tickets.cinemacity.cz/order/233353",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233353?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233353?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233353",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233353?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233354",
+      "presentation_code": "233354",
+      "datetime": "2026-09-07T16:40:00+02:00",
+      "event_datetime_api": "2026-09-07T16:40:00",
+      "date": "2026-09-07",
+      "time": "16:40",
+      "business_day": "2026-09-07",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.1169,
+      "booking_url": "https://tickets.cinemacity.cz/order/233354",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233354?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233354?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233354",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233354?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233355",
+      "presentation_code": "233355",
+      "datetime": "2026-09-07T20:30:00+02:00",
+      "event_datetime_api": "2026-09-07T20:30:00",
+      "date": "2026-09-07",
+      "time": "20:30",
+      "business_day": "2026-09-07",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0883,
+      "booking_url": "https://tickets.cinemacity.cz/order/233355",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233355?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233355?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233355",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233355?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233356",
+      "presentation_code": "233356",
+      "datetime": "2026-09-08T09:00:00+02:00",
+      "event_datetime_api": "2026-09-08T09:00:00",
+      "date": "2026-09-08",
+      "time": "09:00",
+      "business_day": "2026-09-08",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.2364,
+      "booking_url": "https://tickets.cinemacity.cz/order/233356",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233356?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233356?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233356",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233356?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233357",
+      "presentation_code": "233357",
+      "datetime": "2026-09-08T12:50:00+02:00",
+      "event_datetime_api": "2026-09-08T12:50:00",
+      "date": "2026-09-08",
+      "time": "12:50",
+      "business_day": "2026-09-08",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.1714,
+      "booking_url": "https://tickets.cinemacity.cz/order/233357",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233357?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233357?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233357",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233357?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233358",
+      "presentation_code": "233358",
+      "datetime": "2026-09-08T16:40:00+02:00",
+      "event_datetime_api": "2026-09-08T16:40:00",
+      "date": "2026-09-08",
+      "time": "16:40",
+      "business_day": "2026-09-08",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.1325,
+      "booking_url": "https://tickets.cinemacity.cz/order/233358",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233358?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233358?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233358",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233358?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "233359",
+      "presentation_code": "233359",
+      "datetime": "2026-09-08T20:30:00+02:00",
+      "event_datetime_api": "2026-09-08T20:30:00",
+      "date": "2026-09-08",
+      "time": "20:30",
+      "business_day": "2026-09-08",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.0571,
+      "booking_url": "https://tickets.cinemacity.cz/order/233359",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/233359?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/233359?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/233359",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/233359?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241543",
+      "presentation_code": "241543",
+      "datetime": "2026-09-09T09:00:00+02:00",
+      "event_datetime_api": "2026-09-09T09:00:00",
+      "date": "2026-09-09",
+      "time": "09:00",
+      "business_day": "2026-09-09",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.6987,
+      "booking_url": "https://tickets.cinemacity.cz/order/241543",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241543?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241543?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241543",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241543?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241544",
+      "presentation_code": "241544",
+      "datetime": "2026-09-09T12:50:00+02:00",
+      "event_datetime_api": "2026-09-09T12:50:00",
+      "date": "2026-09-09",
+      "time": "12:50",
+      "business_day": "2026-09-09",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.6338,
+      "booking_url": "https://tickets.cinemacity.cz/order/241544",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241544?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241544?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241544",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241544?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241545",
+      "presentation_code": "241545",
+      "datetime": "2026-09-09T16:40:00+02:00",
+      "event_datetime_api": "2026-09-09T16:40:00",
+      "date": "2026-09-09",
+      "time": "16:40",
+      "business_day": "2026-09-09",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.3922,
+      "booking_url": "https://tickets.cinemacity.cz/order/241545",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241545?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241545?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241545",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241545?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241546",
+      "presentation_code": "241546",
+      "datetime": "2026-09-09T20:30:00+02:00",
+      "event_datetime_api": "2026-09-09T20:30:00",
+      "date": "2026-09-09",
+      "time": "20:30",
+      "business_day": "2026-09-09",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4078,
+      "booking_url": "https://tickets.cinemacity.cz/order/241546",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241546?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241546?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241546",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241546?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241547",
+      "presentation_code": "241547",
+      "datetime": "2026-09-10T09:00:00+02:00",
+      "event_datetime_api": "2026-09-10T09:00:00",
+      "date": "2026-09-10",
+      "time": "09:00",
+      "business_day": "2026-09-10",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.7299,
+      "booking_url": "https://tickets.cinemacity.cz/order/241547",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241547?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241547?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241547",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241547?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241548",
+      "presentation_code": "241548",
+      "datetime": "2026-09-10T12:50:00+02:00",
+      "event_datetime_api": "2026-09-10T12:50:00",
+      "date": "2026-09-10",
+      "time": "12:50",
+      "business_day": "2026-09-10",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.6935,
+      "booking_url": "https://tickets.cinemacity.cz/order/241548",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241548?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241548?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241548",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241548?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241549",
+      "presentation_code": "241549",
+      "datetime": "2026-09-10T16:40:00+02:00",
+      "event_datetime_api": "2026-09-10T16:40:00",
+      "date": "2026-09-10",
+      "time": "16:40",
+      "business_day": "2026-09-10",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4052,
+      "booking_url": "https://tickets.cinemacity.cz/order/241549",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241549?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241549?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241549",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241549?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241550",
+      "presentation_code": "241550",
+      "datetime": "2026-09-10T20:30:00+02:00",
+      "event_datetime_api": "2026-09-10T20:30:00",
+      "date": "2026-09-10",
+      "time": "20:30",
+      "business_day": "2026-09-10",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4078,
+      "booking_url": "https://tickets.cinemacity.cz/order/241550",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241550?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241550?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241550",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241550?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241551",
+      "presentation_code": "241551",
+      "datetime": "2026-09-11T09:00:00+02:00",
+      "event_datetime_api": "2026-09-11T09:00:00",
+      "date": "2026-09-11",
+      "time": "09:00",
+      "business_day": "2026-09-11",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.7325,
+      "booking_url": "https://tickets.cinemacity.cz/order/241551",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241551?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241551?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241551",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241551?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241552",
+      "presentation_code": "241552",
+      "datetime": "2026-09-11T12:50:00+02:00",
+      "event_datetime_api": "2026-09-11T12:50:00",
+      "date": "2026-09-11",
+      "time": "12:50",
+      "business_day": "2026-09-11",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.639,
+      "booking_url": "https://tickets.cinemacity.cz/order/241552",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241552?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241552?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241552",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241552?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241553",
+      "presentation_code": "241553",
+      "datetime": "2026-09-11T16:40:00+02:00",
+      "event_datetime_api": "2026-09-11T16:40:00",
+      "date": "2026-09-11",
+      "time": "16:40",
+      "business_day": "2026-09-11",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.3429,
+      "booking_url": "https://tickets.cinemacity.cz/order/241553",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241553?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241553?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241553",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241553?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241554",
+      "presentation_code": "241554",
+      "datetime": "2026-09-11T20:30:00+02:00",
+      "event_datetime_api": "2026-09-11T20:30:00",
+      "date": "2026-09-11",
+      "time": "20:30",
+      "business_day": "2026-09-11",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.361,
+      "booking_url": "https://tickets.cinemacity.cz/order/241554",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241554?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241554?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241554",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241554?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241555",
+      "presentation_code": "241555",
+      "datetime": "2026-09-12T09:00:00+02:00",
+      "event_datetime_api": "2026-09-12T09:00:00",
+      "date": "2026-09-12",
+      "time": "09:00",
+      "business_day": "2026-09-12",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4831,
+      "booking_url": "https://tickets.cinemacity.cz/order/241555",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241555?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241555?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241555",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241555?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241556",
+      "presentation_code": "241556",
+      "datetime": "2026-09-12T12:50:00+02:00",
+      "event_datetime_api": "2026-09-12T12:50:00",
+      "date": "2026-09-12",
+      "time": "12:50",
+      "business_day": "2026-09-12",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.3273,
+      "booking_url": "https://tickets.cinemacity.cz/order/241556",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241556?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241556?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241556",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241556?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241557",
+      "presentation_code": "241557",
+      "datetime": "2026-09-12T16:40:00+02:00",
+      "event_datetime_api": "2026-09-12T16:40:00",
+      "date": "2026-09-12",
+      "time": "16:40",
+      "business_day": "2026-09-12",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.2623,
+      "booking_url": "https://tickets.cinemacity.cz/order/241557",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241557?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241557?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241557",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241557?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241558",
+      "presentation_code": "241558",
+      "datetime": "2026-09-12T20:30:00+02:00",
+      "event_datetime_api": "2026-09-12T20:30:00",
+      "date": "2026-09-12",
+      "time": "20:30",
+      "business_day": "2026-09-12",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.387,
+      "booking_url": "https://tickets.cinemacity.cz/order/241558",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241558?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241558?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241558",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241558?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241559",
+      "presentation_code": "241559",
+      "datetime": "2026-09-13T09:00:00+02:00",
+      "event_datetime_api": "2026-09-13T09:00:00",
+      "date": "2026-09-13",
+      "time": "09:00",
+      "business_day": "2026-09-13",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4312,
+      "booking_url": "https://tickets.cinemacity.cz/order/241559",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241559?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241559?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241559",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241559?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241560",
+      "presentation_code": "241560",
+      "datetime": "2026-09-13T12:50:00+02:00",
+      "event_datetime_api": "2026-09-13T12:50:00",
+      "date": "2026-09-13",
+      "time": "12:50",
+      "business_day": "2026-09-13",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.3273,
+      "booking_url": "https://tickets.cinemacity.cz/order/241560",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241560?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241560?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241560",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241560?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241561",
+      "presentation_code": "241561",
+      "datetime": "2026-09-13T16:40:00+02:00",
+      "event_datetime_api": "2026-09-13T16:40:00",
+      "date": "2026-09-13",
+      "time": "16:40",
+      "business_day": "2026-09-13",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.3455,
+      "booking_url": "https://tickets.cinemacity.cz/order/241561",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241561?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241561?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241561",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241561?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241562",
+      "presentation_code": "241562",
+      "datetime": "2026-09-13T20:30:00+02:00",
+      "event_datetime_api": "2026-09-13T20:30:00",
+      "date": "2026-09-13",
+      "time": "20:30",
+      "business_day": "2026-09-13",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4649,
+      "booking_url": "https://tickets.cinemacity.cz/order/241562",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241562?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241562?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241562",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241562?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241563",
+      "presentation_code": "241563",
+      "datetime": "2026-09-14T09:00:00+02:00",
+      "event_datetime_api": "2026-09-14T09:00:00",
+      "date": "2026-09-14",
+      "time": "09:00",
+      "business_day": "2026-09-14",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.787,
+      "booking_url": "https://tickets.cinemacity.cz/order/241563",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241563?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241563?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241563",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241563?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241564",
+      "presentation_code": "241564",
+      "datetime": "2026-09-14T12:50:00+02:00",
+      "event_datetime_api": "2026-09-14T12:50:00",
+      "date": "2026-09-14",
+      "time": "12:50",
+      "business_day": "2026-09-14",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.6987,
+      "booking_url": "https://tickets.cinemacity.cz/order/241564",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241564?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241564?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241564",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241564?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241565",
+      "presentation_code": "241565",
+      "datetime": "2026-09-14T16:40:00+02:00",
+      "event_datetime_api": "2026-09-14T16:40:00",
+      "date": "2026-09-14",
+      "time": "16:40",
+      "business_day": "2026-09-14",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4545,
+      "booking_url": "https://tickets.cinemacity.cz/order/241565",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241565?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241565?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241565",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241565?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241566",
+      "presentation_code": "241566",
+      "datetime": "2026-09-14T20:30:00+02:00",
+      "event_datetime_api": "2026-09-14T20:30:00",
+      "date": "2026-09-14",
+      "time": "20:30",
+      "business_day": "2026-09-14",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4026,
+      "booking_url": "https://tickets.cinemacity.cz/order/241566",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241566?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241566?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241566",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241566?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241567",
+      "presentation_code": "241567",
+      "datetime": "2026-09-15T09:00:00+02:00",
+      "event_datetime_api": "2026-09-15T09:00:00",
+      "date": "2026-09-15",
+      "time": "09:00",
+      "business_day": "2026-09-15",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.8234,
+      "booking_url": "https://tickets.cinemacity.cz/order/241567",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241567?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241567?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241567",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241567?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241568",
+      "presentation_code": "241568",
+      "datetime": "2026-09-15T12:50:00+02:00",
+      "event_datetime_api": "2026-09-15T12:50:00",
+      "date": "2026-09-15",
+      "time": "12:50",
+      "business_day": "2026-09-15",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.6857,
+      "booking_url": "https://tickets.cinemacity.cz/order/241568",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241568?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241568?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241568",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241568?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241569",
+      "presentation_code": "241569",
+      "datetime": "2026-09-15T16:40:00+02:00",
+      "event_datetime_api": "2026-09-15T16:40:00",
+      "date": "2026-09-15",
+      "time": "16:40",
+      "business_day": "2026-09-15",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4052,
+      "booking_url": "https://tickets.cinemacity.cz/order/241569",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241569?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241569?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241569",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241569?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241570",
+      "presentation_code": "241570",
+      "datetime": "2026-09-15T20:30:00+02:00",
+      "event_datetime_api": "2026-09-15T20:30:00",
+      "date": "2026-09-15",
+      "time": "20:30",
+      "business_day": "2026-09-15",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.3974,
+      "booking_url": "https://tickets.cinemacity.cz/order/241570",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241570?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241570?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241570",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241570?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241571",
+      "presentation_code": "241571",
+      "datetime": "2026-09-16T09:00:00+02:00",
+      "event_datetime_api": "2026-09-16T09:00:00",
+      "date": "2026-09-16",
+      "time": "09:00",
+      "business_day": "2026-09-16",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.813,
+      "booking_url": "https://tickets.cinemacity.cz/order/241571",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241571?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241571?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241571",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241571?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241572",
+      "presentation_code": "241572",
+      "datetime": "2026-09-16T12:50:00+02:00",
+      "event_datetime_api": "2026-09-16T12:50:00",
+      "date": "2026-09-16",
+      "time": "12:50",
+      "business_day": "2026-09-16",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.6857,
+      "booking_url": "https://tickets.cinemacity.cz/order/241572",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241572?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241572?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241572",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241572?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241573",
+      "presentation_code": "241573",
+      "datetime": "2026-09-16T16:40:00+02:00",
+      "event_datetime_api": "2026-09-16T16:40:00",
+      "date": "2026-09-16",
+      "time": "16:40",
+      "business_day": "2026-09-16",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4494,
+      "booking_url": "https://tickets.cinemacity.cz/order/241573",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241573?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241573?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241573",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241573?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241574",
+      "presentation_code": "241574",
+      "datetime": "2026-09-16T20:30:00+02:00",
+      "event_datetime_api": "2026-09-16T20:30:00",
+      "date": "2026-09-16",
+      "time": "20:30",
+      "business_day": "2026-09-16",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4338,
+      "booking_url": "https://tickets.cinemacity.cz/order/241574",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241574?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241574?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241574",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241574?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241575",
+      "presentation_code": "241575",
+      "datetime": "2026-09-17T09:00:00+02:00",
+      "event_datetime_api": "2026-09-17T09:00:00",
+      "date": "2026-09-17",
+      "time": "09:00",
+      "business_day": "2026-09-17",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.774,
+      "booking_url": "https://tickets.cinemacity.cz/order/241575",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241575?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241575?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241575",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241575?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241576",
+      "presentation_code": "241576",
+      "datetime": "2026-09-17T12:50:00+02:00",
+      "event_datetime_api": "2026-09-17T12:50:00",
+      "date": "2026-09-17",
+      "time": "12:50",
+      "business_day": "2026-09-17",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.7039,
+      "booking_url": "https://tickets.cinemacity.cz/order/241576",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241576?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241576?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241576",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241576?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241577",
+      "presentation_code": "241577",
+      "datetime": "2026-09-17T16:40:00+02:00",
+      "event_datetime_api": "2026-09-17T16:40:00",
+      "date": "2026-09-17",
+      "time": "16:40",
+      "business_day": "2026-09-17",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.4519,
+      "booking_url": "https://tickets.cinemacity.cz/order/241577",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241577?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241577?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241577",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241577?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241578",
+      "presentation_code": "241578",
+      "datetime": "2026-09-17T20:30:00+02:00",
+      "event_datetime_api": "2026-09-17T20:30:00",
+      "date": "2026-09-17",
+      "time": "20:30",
+      "business_day": "2026-09-17",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.3714,
+      "booking_url": "https://tickets.cinemacity.cz/order/241578",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241578?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241578?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241578",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241578?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241579",
+      "presentation_code": "241579",
+      "datetime": "2026-09-18T09:00:00+02:00",
+      "event_datetime_api": "2026-09-18T09:00:00",
+      "date": "2026-09-18",
+      "time": "09:00",
+      "business_day": "2026-09-18",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.7013,
+      "booking_url": "https://tickets.cinemacity.cz/order/241579",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241579?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241579?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241579",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241579?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241580",
+      "presentation_code": "241580",
+      "datetime": "2026-09-18T12:50:00+02:00",
+      "event_datetime_api": "2026-09-18T12:50:00",
+      "date": "2026-09-18",
+      "time": "12:50",
+      "business_day": "2026-09-18",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.6026,
+      "booking_url": "https://tickets.cinemacity.cz/order/241580",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241580?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241580?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241580",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241580?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241581",
+      "presentation_code": "241581",
+      "datetime": "2026-09-18T16:50:00+02:00",
+      "event_datetime_api": "2026-09-18T16:50:00",
+      "date": "2026-09-18",
+      "time": "16:50",
+      "business_day": "2026-09-18",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.3377,
+      "booking_url": "https://tickets.cinemacity.cz/order/241581",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241581?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241581?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241581",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241581?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    },
+    {
+      "event_id": "241582",
+      "presentation_code": "241582",
+      "datetime": "2026-09-18T20:30:00+02:00",
+      "event_datetime_api": "2026-09-18T20:30:00",
+      "date": "2026-09-18",
+      "time": "20:30",
+      "business_day": "2026-09-18",
+      "cinema": {
+        "id": "1052",
+        "name": "Praha Flora, OC FLORA"
+      },
+      "auditorium": "IMAX VOLVO",
+      "auditorium_tiny_name": "IMAX",
+      "film": {
+        "id": "7268s2r",
+        "name": "Odyssea",
+        "length_minutes": 180,
+        "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+        "poster_link": "https://www.cinemacity.cz/xmedia-cw/repo/feats/posters/7268S2R.jpg",
+        "release_year": "2026",
+        "release_date": "2026-07-16T00:00:00",
+        "attributes": [
+          "15-plus",
+          "2d",
+          "70-mm",
+          "drama",
+          "first-subbed-lang-cs",
+          "history",
+          "original-lang-en",
+          "subbed"
+        ]
+      },
+      "attributes": [
+        "15-plus",
+        "2d",
+        "70-mm",
+        "drama",
+        "first-subbed-lang-cs",
+        "history",
+        "original-lang-en",
+        "subbed"
+      ],
+      "is_70_mm": true,
+      "is_imax": true,
+      "languages": {
+        "original": [
+          "en"
+        ],
+        "dubbed": [],
+        "voiceover": [],
+        "subtitles": [
+          "cs"
+        ]
+      },
+      "sold_out": false,
+      "availability_ratio": 0.2909,
+      "booking_url": "https://tickets.cinemacity.cz/order/241582",
+      "api_booking_links": {
+        "booking_link": "https://tickets.cinemacity.cz/api/order/241582?lang=cs",
+        "booking_router_launch_link": "https://www.cinemacity.cz/cz/booking-router/launch/241582?lang=cs",
+        "composite_booking_link": {
+          "type": "PG",
+          "bookingUrl": {
+            "url": "https://tickets.cinemacity.cz/api/order/241582",
+            "params": {
+              "lang": "cs-CZ"
+            }
+          },
+          "obsoleteBookingUrl": "https://tickets.cinemacity.cz/api/order/241582?lang=cs",
+          "blockOnlineSales": false,
+          "blockOnlineSalesUntil": null,
+          "serviceUrl": "https://www.cinemacity.cz/booking"
+        }
+      }
+    }
+  ]
+}

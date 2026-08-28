@@ -1,0 +1,62 @@
+{
+  "films": [
+    {
+      "id": "7268s2r",
+      "name": "Odyssea",
+      "length": 180,
+      "link": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+      "attributeIds": ["2d", "70-mm", "subbed"]
+    },
+    {
+      "id": "wrong-film",
+      "name": "Jiný film",
+      "length": 100,
+      "attributeIds": ["2d", "70-mm"]
+    }
+  ],
+  "events": [
+    {
+      "id": "correct",
+      "filmId": "7268s2r",
+      "cinemaId": "1052",
+      "businessDay": "2026-09-18",
+      "eventDateTime": "2026-09-18T20:30:00",
+      "attributeIds": ["2d", "70-mm", "subbed"],
+      "presentationCode": "correct",
+      "soldOut": false,
+      "availabilityRatio": 0.29,
+      "auditorium": "IMAX VOLVO",
+      "auditoriumTinyName": "IMAX"
+    },
+    {
+      "id": "wrong-film-event",
+      "filmId": "wrong-film",
+      "cinemaId": "1052",
+      "businessDay": "2026-09-18",
+      "eventDateTime": "2026-09-18T21:00:00",
+      "attributeIds": ["2d", "70-mm"],
+      "auditorium": "IMAX VOLVO",
+      "auditoriumTinyName": "IMAX"
+    },
+    {
+      "id": "not-70mm",
+      "filmId": "7268s2r",
+      "cinemaId": "1052",
+      "businessDay": "2026-09-18",
+      "eventDateTime": "2026-09-18T22:00:00",
+      "attributeIds": ["2d", "subbed"],
+      "auditorium": "IMAX VOLVO",
+      "auditoriumTinyName": "IMAX"
+    },
+    {
+      "id": "not-imax",
+      "filmId": "7268s2r",
+      "cinemaId": "1052",
+      "businessDay": "2026-09-18",
+      "eventDateTime": "2026-09-18T23:00:00",
+      "attributeIds": ["2d", "70-mm", "subbed"],
+      "auditorium": "SÁL 3",
+      "auditoriumTinyName": "3"
+    }
+  ]
+}

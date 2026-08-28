@@ -1,0 +1,13 @@
+{
+  "api_base": "https://www.cinemacity.cz/cz/data-api-service/v1/quickbook/10101",
+  "language": "cs_CZ",
+  "until": "9999-12-31",
+  "timeout_seconds": 25,
+  "film_name": "Odyssea",
+  "cinema_name_contains": "Praha Flora",
+  "cinema_id_fallback": "1052",
+  "required_attributes": [
+    "70-mm"
+  ],
+  "require_imax": true
+}
