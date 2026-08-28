@@ -2,7 +2,7 @@ name: Watch Cinema City showings
 
 on:
   schedule:
-    - cron: "4,19,34,49 * * * *"
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
 
 permissions:
