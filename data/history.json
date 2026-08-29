@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "created_at": "2026-08-28T21:44:50+02:00",
-  "updated_at": "2026-08-29T17:03:15+02:00",
+  "updated_at": "2026-08-29T23:09:55+02:00",
   "events": {
     "233318": {
       "first_seen_at": "2026-08-28T21:44:50+02:00",
@@ -44,8 +44,8 @@
         "auditorium": "IMAX VOLVO",
         "sold_out": false
       },
-      "active": true,
-      "disappeared_at": null
+      "active": false,
+      "disappeared_at": "2026-08-29T23:09:55+02:00"
     },
     "233322": {
       "first_seen_at": "2026-08-28T21:44:50+02:00",
@@ -1009,6 +1009,21 @@
       "removed_event_ids": [
         "233318",
         "233320"
+      ],
+      "previous_latest_showing": {
+        "event_id": "241582",
+        "datetime": "2026-09-18T20:30:00+02:00"
+      },
+      "current_latest_showing": {
+        "event_id": "241582",
+        "datetime": "2026-09-18T20:30:00+02:00"
+      }
+    },
+    {
+      "detected_at": "2026-08-29T23:09:55+02:00",
+      "added_event_ids": [],
+      "removed_event_ids": [
+        "233321"
       ],
       "previous_latest_showing": {
         "event_id": "241582",
