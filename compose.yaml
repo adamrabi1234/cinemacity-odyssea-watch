@@ -8,6 +8,7 @@ services:
     environment:
       PORT: "8000"
       WATCH_FIXED_INTERVAL_SECONDS: "${WATCH_FIXED_INTERVAL_SECONDS:-}"
+      DISCORD_WEBHOOK_URL: "${DISCORD_WEBHOOK_URL:-}"
     expose:
       - "8000"
     volumes:

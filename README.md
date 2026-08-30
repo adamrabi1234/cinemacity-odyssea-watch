@@ -37,7 +37,17 @@ Coolify Scheduled Tasks nejsou potřeba. Smyčka kontrol je součástí kontejne
 | Ostatní dny 07:00–23:00 | 1 hodina |
 | Noc mimo hlavní publikační okno | 4 hodiny |
 
-Cinema City uvádí, že nový program na období čtvrtek–středa zveřejňuje v úterý; v nápovědě také zmiňuje pondělí večer nebo úterý ráno. Rozvrh proto kontroluje nejčastěji v tomto publikačním okně a mimo něj omezuje zbytečné API požadavky. Při přechodu do rychlejšího okna se čekání automaticky zkrátí, takže například kontrola v úterý před 06:00 toto okno nepřeskočí.
+Cinema City uvádí, že nový program na období čtvrtek–středa zveřejňuje v úterý; v nápovědě také zmiňuje pondělí večer nebo úterý ráno. Rozvrh proto kontroluje nejčastěji v tomto publikačním okně a mimo něj omezuje zbytečné API požadavky. Kontroly jsou zarovnané jednu minutu po časovém slotu: hodinové běží v `HH:01`, desetiminutové v `:01`, `:11`, `:21` atd. a půlhodinové v `:01` a `:31`. Cinema City tak dostane krátký čas na dokončení aktualizace programu.
+
+## Discord oznámení
+
+Volitelná proměnná `DISCORD_WEBHOOK_URL` zapne oznámení do jednoho Discord kanálu. URL ukládejte pouze jako secret v Coolify, nikdy do repozitáře. Watcher při prvním zapnutí vytvoří výchozí stav bez rozeslání všech existujících projekcí. Při dalších kontrolách pošle jednu zprávu se všemi novými termíny, jejich datem, časem, sálem a přímým odkazem na rezervaci.
+
+1. V nastavení cílového Discord kanálu otevřete **Integrace → Webhooky**, vytvořte nový webhook a zkopírujte jeho URL.
+2. V Coolify otevřete aplikaci a v **Environment Variables** přidejte `DISCORD_WEBHOOK_URL`. Hodnotu označte jako secret a neukládejte ji do Compose ani do Gitu.
+3. Uložte nastavení a aplikaci znovu nasaďte. URL musí mířit na oficiální HTTPS webhook Discordu; jinou adresu aplikace bezpečnostně odmítne.
+
+Stav oznámení je uložen v `data/notification-state.json` na trvalém volume. Aktualizuje se až po úspěšném odeslání; při dočasném selhání Discordu se stejné nové termíny zkusí poslat při následující kontrole.
 
 ### Proč nehrozí konflikt portů
 

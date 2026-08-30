@@ -8,7 +8,7 @@ run_watcher() {
     echo "Live Cinema City check completed successfully."
   else
     status=$?
-    echo "ERROR: Live Cinema City check failed with exit code $status; keeping the last good snapshot." >&2
+    echo "ERROR: Watcher cycle had an error (exit code $status); published data remains available and notifications will retry." >&2
   fi
 }
 

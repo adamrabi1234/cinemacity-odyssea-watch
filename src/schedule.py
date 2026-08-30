@@ -3,9 +3,8 @@
 
 from __future__ import annotations
 
-import math
 import os
-from datetime import datetime, time, timedelta
+from datetime import UTC, datetime, time, timedelta
 from zoneinfo import ZoneInfo
 
 
@@ -25,37 +24,55 @@ def fixed_interval_from_environment() -> int | None:
     return interval
 
 
-def adaptive_interval_seconds(now: datetime) -> int:
-    """Return the interval for the current Europe/Prague release window."""
-    weekday = now.weekday()
+def adaptive_window(now: datetime) -> tuple[datetime, datetime, int]:
+    """Return the active window start, end and interval in Prague local time."""
+    date = now.date()
+    midnight = datetime.combine(date, time(0, 0), tzinfo=PRAGUE_TZ)
     current_time = now.timetz().replace(tzinfo=None)
+    weekday = now.weekday()
 
-    if weekday == 0 and current_time >= time(18, 0):
-        return 10 * 60
-    if weekday == 1 and time(6, 0) <= current_time < time(14, 0):
-        return 10 * 60
-    if weekday == 1 and time(14, 0) <= current_time < time(22, 0):
-        return 30 * 60
-    if time(7, 0) <= current_time < time(23, 0):
-        return 60 * 60
-    return 4 * 60 * 60
+    if weekday == 0:
+        if current_time < time(7, 0):
+            return midnight - timedelta(hours=1), midnight + timedelta(hours=7), 14400
+        if current_time < time(18, 0):
+            return midnight + timedelta(hours=7), midnight + timedelta(hours=18), 3600
+        return midnight + timedelta(hours=18), midnight + timedelta(days=1), 600
+
+    if weekday == 1:
+        if current_time < time(6, 0):
+            return midnight, midnight + timedelta(hours=6), 14400
+        if current_time < time(14, 0):
+            return midnight + timedelta(hours=6), midnight + timedelta(hours=14), 600
+        if current_time < time(22, 0):
+            return midnight + timedelta(hours=14), midnight + timedelta(hours=22), 1800
+        if current_time < time(23, 0):
+            return midnight + timedelta(hours=22), midnight + timedelta(hours=23), 3600
+        return midnight + timedelta(hours=23), midnight + timedelta(days=1, hours=7), 14400
+
+    if current_time < time(7, 0):
+        return midnight - timedelta(hours=1), midnight + timedelta(hours=7), 14400
+    if current_time < time(23, 0):
+        return midnight + timedelta(hours=7), midnight + timedelta(hours=23), 3600
+    return midnight + timedelta(hours=23), midnight + timedelta(days=1, hours=7), 14400
 
 
-def schedule_boundaries(now: datetime) -> list[datetime]:
-    """List upcoming times at which the adaptive interval may change."""
-    boundaries: list[datetime] = []
-    for days_ahead in range(8):
-        date = (now + timedelta(days=days_ahead)).date()
-        times = {time(7, 0), time(23, 0)}
-        if date.weekday() == 0:
-            times.add(time(18, 0))
-        if date.weekday() == 1:
-            times.update({time(6, 0), time(14, 0), time(22, 0)})
-        for boundary_time in times:
-            boundary = datetime.combine(date, boundary_time, tzinfo=PRAGUE_TZ)
-            if boundary > now:
-                boundaries.append(boundary)
-    return sorted(boundaries)
+def next_adaptive_check(now: datetime) -> datetime:
+    """Find the next wall-clock-aligned check, always one minute after a slot."""
+    local_now = now.astimezone(PRAGUE_TZ)
+    cursor = local_now
+    for _ in range(10):
+        start, end, interval = adaptive_window(cursor)
+        first = start + timedelta(minutes=1)
+        if local_now < first:
+            candidate = first
+        else:
+            elapsed = (local_now - first).total_seconds()
+            steps = int(elapsed // interval) + 1
+            candidate = first + timedelta(seconds=steps * interval)
+        if candidate < end:
+            return candidate
+        cursor = end
+    raise RuntimeError("Could not calculate the next adaptive check.")
 
 
 def seconds_until_next_check(
@@ -71,12 +88,11 @@ def seconds_until_next_check(
         return fixed_interval_seconds
 
     local_now = now.astimezone(PRAGUE_TZ)
-    interval = adaptive_interval_seconds(local_now)
-    boundaries = schedule_boundaries(local_now)
-    if boundaries:
-        seconds_to_boundary = math.ceil((boundaries[0] - local_now).total_seconds())
-        interval = min(interval, seconds_to_boundary)
-    return max(1, interval)
+    next_check = next_adaptive_check(local_now)
+    wait = (
+        next_check.astimezone(UTC) - local_now.astimezone(UTC)
+    ).total_seconds()
+    return max(1, int(wait + 0.999999))
 
 
 def main() -> None:

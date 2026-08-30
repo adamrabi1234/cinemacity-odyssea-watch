@@ -13,6 +13,7 @@ from copy import deepcopy
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
 import requests
@@ -22,6 +23,7 @@ PRAGUE_TZ = ZoneInfo("Europe/Prague")
 DEFAULT_CONFIG = Path("config.json")
 DEFAULT_LATEST = Path("data/latest.json")
 DEFAULT_HISTORY = Path("data/history.json")
+DEFAULT_NOTIFICATION_STATE = Path("data/notification-state.json")
 
 
 class WatchError(RuntimeError):
@@ -117,6 +119,134 @@ def atomic_write_json(path: Path, value: dict[str, Any]) -> None:
             except OSError:
                 pass
         raise WatchError(f"Cannot atomically write {path}: {exc}") from exc
+
+
+def format_discord_line(showing: dict[str, Any]) -> str:
+    try:
+        showing_time = datetime.fromisoformat(str(showing["datetime"])).astimezone(PRAGUE_TZ)
+    except (KeyError, TypeError, ValueError) as exc:
+        raise WatchError("A new showing has no valid datetime for notification.") from exc
+    booking_url = str(showing.get("booking_url") or "").strip()
+    if not booking_url.startswith("https://"):
+        raise WatchError("A new showing has no safe HTTPS booking URL.")
+    auditorium = str(showing.get("auditorium") or "IMAX")
+    return (
+        f"**{showing_time:%d.%m.%Y %H:%M}** · {auditorium} · "
+        f"[Rezervovat]({booking_url})"
+    )
+
+
+def validate_discord_webhook_url(webhook_url: str) -> None:
+    """Reject accidental or malicious non-Discord notification destinations."""
+    parsed = urlsplit(webhook_url)
+    allowed_hosts = {
+        "discord.com",
+        "discordapp.com",
+        "ptb.discord.com",
+        "canary.discord.com",
+    }
+    if (
+        parsed.scheme != "https"
+        or parsed.hostname not in allowed_hosts
+        or parsed.username is not None
+        or parsed.password is not None
+        or not parsed.path.startswith("/api/webhooks/")
+    ):
+        raise WatchError("DISCORD_WEBHOOK_URL is not a valid Discord HTTPS webhook URL.")
+
+
+def discord_payloads(showings: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Build payloads below Discord's documented message/embed limits."""
+    lines = [format_discord_line(showing) for showing in showings]
+    descriptions: list[str] = []
+    current: list[str] = []
+    current_length = 0
+    for line in lines:
+        line_length = len(line) + (1 if current else 0)
+        if current and current_length + line_length > 3800:
+            descriptions.append("\n".join(current))
+            current = []
+            current_length = 0
+        current.append(line)
+        current_length += len(line) + (1 if current_length else 0)
+    if current:
+        descriptions.append("\n".join(current))
+
+    payloads: list[dict[str, Any]] = []
+    for index, description in enumerate(descriptions):
+        part = (
+            ""
+            if len(descriptions) == 1
+            else f" — část {index + 1}/{len(descriptions)}"
+        )
+        payloads.append(
+            {
+                "username": "Cinema City watcher",
+                "content": (
+                    f"🎬 **Nové termíny Odyssea IMAX 70 mm ({len(showings)})**{part}"
+                ),
+                "embeds": [
+                    {
+                        "description": description,
+                        "color": 0xE21C2A,
+                    }
+                ],
+                "allowed_mentions": {"parse": []},
+            }
+        )
+    return payloads
+
+
+def notify_discord(
+    snapshot: dict[str, Any],
+    state_path: Path,
+    webhook_url: str,
+    *,
+    session: requests.Session | None = None,
+) -> int:
+    """Notify about event IDs not yet recorded in persistent notification state."""
+    validate_discord_webhook_url(webhook_url)
+    showings = {
+        str(item.get("event_id")): item
+        for item in snapshot.get("showings", [])
+        if isinstance(item, dict) and item.get("event_id")
+    }
+    state = load_json(state_path, optional=True)
+    checked_at = str(snapshot.get("checked_at") or datetime.now(PRAGUE_TZ).isoformat())
+
+    if state is None:
+        atomic_write_json(
+            state_path,
+            {
+                "schema_version": 1,
+                "initialized_at": checked_at,
+                "updated_at": checked_at,
+                "notified_event_ids": sorted(showings),
+            },
+        )
+        return 0
+
+    notified = state.get("notified_event_ids")
+    if not isinstance(notified, list):
+        raise WatchError("Notification state has no valid notified_event_ids list.")
+    known_ids = {str(event_id) for event_id in notified}
+    new_showings = [showing for event_id, showing in showings.items() if event_id not in known_ids]
+    new_showings.sort(key=lambda showing: str(showing.get("datetime") or ""))
+    if not new_showings:
+        return 0
+
+    client = session or requests.Session()
+    try:
+        for payload in discord_payloads(new_showings):
+            response = client.post(webhook_url, json=payload, timeout=15)
+            response.raise_for_status()
+    except requests.RequestException as exc:
+        raise WatchError(f"Discord notification failed: {exc}") from exc
+
+    state["notified_event_ids"] = sorted(known_ids | set(showings))
+    state["updated_at"] = checked_at
+    atomic_write_json(state_path, state)
+    return len(new_showings)
 
 
 def select_cinema(
@@ -433,6 +563,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--latest", type=Path, default=DEFAULT_LATEST)
     parser.add_argument("--history", type=Path, default=DEFAULT_HISTORY)
+    parser.add_argument(
+        "--notification-state", type=Path, default=DEFAULT_NOTIFICATION_STATE
+    )
     args = parser.parse_args(argv)
     try:
         snapshot = run(args.config, args.latest, args.history)
@@ -453,6 +586,22 @@ def main(argv: list[str] | None = None) -> int:
         )
     else:
         print("Latest: none")
+
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
+    if webhook_url:
+        try:
+            notification_count = notify_discord(
+                snapshot,
+                args.notification_state,
+                webhook_url,
+            )
+        except WatchError as exc:
+            print(f"ERROR: {exc}", file=sys.stderr)
+            return 2
+        if notification_count:
+            print(f"Discord notification sent for {notification_count} new showings.")
+        elif args.notification_state.exists():
+            print("Discord notification state is current; no new showings.")
     return 0
 
 
