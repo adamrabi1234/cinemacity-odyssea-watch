@@ -1,6 +1,6 @@
 # Cinema City Odyssea watch
 
-Watcher sleduje veřejné Cinema City API a hledá představení filmu **Odyssea** v Praze. Aplikace je připravená jako samostatná Docker Compose služba pro Coolify: kontrolu provede hned po startu a potom ji opakuje v nastaveném intervalu. GitHub slouží pouze jako zdroj kódu; GitHub Actions nejsou potřeba.
+Watcher sleduje veřejné Cinema City API a hledá představení filmu **Odyssea** v Praze. Aplikace je připravená jako samostatná Docker Compose služba pro Coolify: kontrolu provede hned po startu a potom ji opakuje podle adaptivního rozvrhu. GitHub slouží pouze jako zdroj kódu; GitHub Actions nejsou potřeba.
 
 ## Veřejné endpointy
 
@@ -20,10 +20,24 @@ Server je pouze pro čtení. Odpovědi mají `Cache-Control: no-store`, aby čte
 3. Jako build pack zvolte **Docker Compose** a soubor `compose.yaml`.
 4. U služby `cinema-watch` v poli **Domains** použijte **Generate Domain**, případně zadejte vlastní subdoménu.
 5. Protože aplikace uvnitř kontejneru poslouchá na portu 8000, musí mít hodnota v Coolify tvar `https://VAŠE_DOMÉNA:8000`. Číslo zde pouze říká proxy, na který interní port má požadavky směrovat; návštěvník ho ve výsledné URL nepoužívá.
-6. Volitelně nastavte `WATCH_INTERVAL_SECONDS=900` pro kontrolu každých 15 minut. Prázdná nebo chybějící hodnota použije stejný výchozí interval.
+6. Proměnnou `WATCH_INTERVAL_SECONDS` nechte prázdnou pro doporučený adaptivní rozvrh. Kladné celé číslo vynutí pevný interval v sekundách.
 7. Proveďte deploy a zvenku ověřte `https://VAŠE_DOMÉNA/healthz`.
 
 Coolify Scheduled Tasks nejsou potřeba. Smyčka kontrol je součástí kontejneru a služba se po pádu nebo restartu serveru automaticky znovu spustí.
+
+### Adaptivní rozvrh kontrol
+
+Časy se vždy vyhodnocují v časové zóně `Europe/Prague`:
+
+| Období | Interval |
+| --- | ---: |
+| Pondělí 18:00–24:00 | 10 minut |
+| Úterý 06:00–14:00 | 10 minut |
+| Úterý 14:00–22:00 | 30 minut |
+| Ostatní dny 07:00–23:00 | 1 hodina |
+| Noc mimo hlavní publikační okno | 4 hodiny |
+
+Cinema City uvádí, že nový program na období čtvrtek–středa zveřejňuje v úterý; v nápovědě také zmiňuje pondělí večer nebo úterý ráno. Rozvrh proto kontroluje nejčastěji v tomto publikačním okně a mimo něj omezuje zbytečné API požadavky. Při přechodu do rychlejšího okna se čekání automaticky zkrátí, takže například kontrola v úterý před 06:00 toto okno nepřeskočí.
 
 ### Proč nehrozí konflikt portů
 

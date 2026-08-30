@@ -2,20 +2,6 @@
 
 set -u
 
-interval="${WATCH_INTERVAL_SECONDS:-900}"
-
-case "$interval" in
-  ''|*[!0-9]*)
-    echo "ERROR: WATCH_INTERVAL_SECONDS must be a positive integer." >&2
-    exit 2
-    ;;
-esac
-
-if [ "$interval" -le 0 ]; then
-  echo "ERROR: WATCH_INTERVAL_SECONDS must be greater than zero." >&2
-  exit 2
-fi
-
 run_watcher() {
   echo "Starting live Cinema City check."
   if python src/watch.py; then
@@ -26,10 +12,14 @@ run_watcher() {
   fi
 }
 
+python src/schedule.py >/dev/null || exit 2
 run_watcher
 
 (
-  while sleep "$interval"; do
+  while true; do
+    interval="$(python src/schedule.py)" || exit 2
+    echo "Next live Cinema City check in ${interval} seconds."
+    sleep "$interval"
     run_watcher
   done
 ) &
