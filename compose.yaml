@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     environment:
       PORT: "8000"
-      WATCH_INTERVAL_SECONDS: "${WATCH_INTERVAL_SECONDS:-}"
+      WATCH_FIXED_INTERVAL_SECONDS: "${WATCH_FIXED_INTERVAL_SECONDS:-}"
     expose:
       - "8000"
     volumes:

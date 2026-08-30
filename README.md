@@ -20,7 +20,7 @@ Server je pouze pro čtení. Odpovědi mají `Cache-Control: no-store`, aby čte
 3. Jako build pack zvolte **Docker Compose** a soubor `compose.yaml`.
 4. U služby `cinema-watch` v poli **Domains** použijte **Generate Domain**, případně zadejte vlastní subdoménu.
 5. Protože aplikace uvnitř kontejneru poslouchá na portu 8000, musí mít hodnota v Coolify tvar `https://VAŠE_DOMÉNA:8000`. Číslo zde pouze říká proxy, na který interní port má požadavky směrovat; návštěvník ho ve výsledné URL nepoužívá.
-6. Proměnnou `WATCH_INTERVAL_SECONDS` nechte prázdnou pro doporučený adaptivní rozvrh. Kladné celé číslo vynutí pevný interval v sekundách.
+6. Proměnnou `WATCH_FIXED_INTERVAL_SECONDS` nechte prázdnou pro doporučený adaptivní rozvrh. Kladné celé číslo vynutí pevný interval v sekundách.
 7. Proveďte deploy a zvenku ověřte `https://VAŠE_DOMÉNA/healthz`.
 
 Coolify Scheduled Tasks nejsou potřeba. Smyčka kontrol je součástí kontejneru a služba se po pádu nebo restartu serveru automaticky znovu spustí.

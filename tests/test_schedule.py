@@ -50,11 +50,11 @@ class ScheduleTests(unittest.TestCase):
         )
 
     def test_blank_environment_uses_adaptive_schedule(self):
-        with patch.dict(os.environ, {"WATCH_INTERVAL_SECONDS": ""}):
+        with patch.dict(os.environ, {"WATCH_FIXED_INTERVAL_SECONDS": ""}):
             self.assertIsNone(fixed_interval_from_environment())
 
     def test_invalid_environment_is_rejected(self):
-        with patch.dict(os.environ, {"WATCH_INTERVAL_SECONDS": "often"}):
+        with patch.dict(os.environ, {"WATCH_FIXED_INTERVAL_SECONDS": "often"}):
             with self.assertRaises(ValueError):
                 fixed_interval_from_environment()
 

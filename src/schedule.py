@@ -13,15 +13,15 @@ PRAGUE_TZ = ZoneInfo("Europe/Prague")
 
 
 def fixed_interval_from_environment() -> int | None:
-    raw = os.environ.get("WATCH_INTERVAL_SECONDS", "").strip()
+    raw = os.environ.get("WATCH_FIXED_INTERVAL_SECONDS", "").strip()
     if not raw:
         return None
     try:
         interval = int(raw)
     except ValueError as exc:
-        raise ValueError("WATCH_INTERVAL_SECONDS must be a positive integer.") from exc
+        raise ValueError("WATCH_FIXED_INTERVAL_SECONDS must be a positive integer.") from exc
     if interval <= 0:
-        raise ValueError("WATCH_INTERVAL_SECONDS must be greater than zero.")
+        raise ValueError("WATCH_FIXED_INTERVAL_SECONDS must be greater than zero.")
     return interval
 
 
