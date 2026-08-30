@@ -155,6 +155,112 @@ def validate_discord_webhook_url(webhook_url: str) -> None:
         raise WatchError("DISCORD_WEBHOOK_URL is not a valid Discord HTTPS webhook URL.")
 
 
+def post_discord_payloads(
+    webhook_url: str,
+    payloads: list[dict[str, Any]],
+    *,
+    session: requests.Session | None = None,
+) -> None:
+    """Send already bounded payloads to one validated Discord webhook."""
+    validate_discord_webhook_url(webhook_url)
+    client = session or requests.Session()
+    try:
+        for payload in payloads:
+            response = client.post(webhook_url, json=payload, timeout=15)
+            response.raise_for_status()
+    except requests.RequestException as exc:
+        raise WatchError(f"Discord notification failed: {exc}") from exc
+
+
+def empty_notification_state(at: str) -> dict[str, Any]:
+    return {
+        "schema_version": 2,
+        "initialized_at": at,
+        "updated_at": at,
+        "showings_initialized": False,
+        "notified_event_ids": [],
+    }
+
+
+def notify_watcher_status(
+    state_path: Path,
+    webhook_url: str,
+    *,
+    error: str | None,
+    checked_at: str | None = None,
+    session: requests.Session | None = None,
+) -> str:
+    """Send one failure transition and one recovery, suppressing repeated errors."""
+    validate_discord_webhook_url(webhook_url)
+    timestamp = checked_at or datetime.now(PRAGUE_TZ).replace(microsecond=0).isoformat()
+    state = load_json(state_path, optional=True) or empty_notification_state(timestamp)
+    state["schema_version"] = 2
+    previous_status = str(state.get("watcher_status") or "unknown")
+    failure_alert_sent = bool(state.get("failure_alert_sent"))
+
+    if error is not None:
+        safe_error = " ".join(str(error).split()).replace("`", "'")[:1000]
+        state["watcher_status"] = "error"
+        state["last_error_at"] = timestamp
+        state["last_error_message"] = safe_error
+        state["updated_at"] = timestamp
+        if previous_status == "error" and failure_alert_sent:
+            atomic_write_json(state_path, state)
+            return "failure_suppressed"
+
+        payload = {
+            "username": "Cinema City watcher",
+            "content": "🚨 **Cinema City watcher: kontrola selhala**",
+            "embeds": [
+                {
+                    "description": (
+                        f"Čas: **{timestamp}**\n"
+                        f"Chyba: `{safe_error}`\n\n"
+                        "Poslední platná data zůstávají dostupná. Další kontrola "
+                        "proběhne automaticky."
+                    ),
+                    "color": 0xE21C2A,
+                }
+            ],
+            "allowed_mentions": {"parse": []},
+        }
+        try:
+            post_discord_payloads(webhook_url, [payload], session=session)
+        except WatchError:
+            state["failure_alert_sent"] = False
+            atomic_write_json(state_path, state)
+            raise
+        state["failure_alert_sent"] = True
+        atomic_write_json(state_path, state)
+        return "failure_sent"
+
+    if previous_status == "error" and failure_alert_sent:
+        payload = {
+            "username": "Cinema City watcher",
+            "content": "✅ **Cinema City watcher opět funguje**",
+            "embeds": [
+                {
+                    "description": (
+                        f"Živá kontrola Cinema City byla úspěšná v **{timestamp}**."
+                    ),
+                    "color": 0x2ECC71,
+                }
+            ],
+            "allowed_mentions": {"parse": []},
+        }
+        post_discord_payloads(webhook_url, [payload], session=session)
+        outcome = "recovery_sent"
+    else:
+        outcome = "status_current"
+
+    state["watcher_status"] = "ok"
+    state["failure_alert_sent"] = False
+    state["last_success_at"] = timestamp
+    state["updated_at"] = timestamp
+    atomic_write_json(state_path, state)
+    return outcome
+
+
 def discord_payloads(showings: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Build payloads below Discord's documented message/embed limits."""
     lines = [format_discord_line(showing) for showing in showings]
@@ -215,15 +321,14 @@ def notify_discord(
     checked_at = str(snapshot.get("checked_at") or datetime.now(PRAGUE_TZ).isoformat())
 
     if state is None:
-        atomic_write_json(
-            state_path,
-            {
-                "schema_version": 1,
-                "initialized_at": checked_at,
-                "updated_at": checked_at,
-                "notified_event_ids": sorted(showings),
-            },
-        )
+        state = empty_notification_state(checked_at)
+
+    if not bool(state.get("showings_initialized", True)):
+        state["schema_version"] = 2
+        state["showings_initialized"] = True
+        state["notified_event_ids"] = sorted(showings)
+        state["updated_at"] = checked_at
+        atomic_write_json(state_path, state)
         return 0
 
     notified = state.get("notified_event_ids")
@@ -235,14 +340,14 @@ def notify_discord(
     if not new_showings:
         return 0
 
-    client = session or requests.Session()
-    try:
-        for payload in discord_payloads(new_showings):
-            response = client.post(webhook_url, json=payload, timeout=15)
-            response.raise_for_status()
-    except requests.RequestException as exc:
-        raise WatchError(f"Discord notification failed: {exc}") from exc
+    post_discord_payloads(
+        webhook_url,
+        discord_payloads(new_showings),
+        session=session,
+    )
 
+    state["schema_version"] = 2
+    state["showings_initialized"] = True
     state["notified_event_ids"] = sorted(known_ids | set(showings))
     state["updated_at"] = checked_at
     atomic_write_json(state_path, state)
@@ -567,10 +672,27 @@ def main(argv: list[str] | None = None) -> int:
         "--notification-state", type=Path, default=DEFAULT_NOTIFICATION_STATE
     )
     args = parser.parse_args(argv)
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
+    attempted_at = datetime.now(PRAGUE_TZ).replace(microsecond=0).isoformat()
     try:
         snapshot = run(args.config, args.latest, args.history)
     except (WatchError, KeyError, TypeError, ValueError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
+        if webhook_url:
+            try:
+                outcome = notify_watcher_status(
+                    args.notification_state,
+                    webhook_url,
+                    error=str(exc),
+                    checked_at=attempted_at,
+                )
+            except WatchError as notification_error:
+                print(f"ERROR: {notification_error}", file=sys.stderr)
+            else:
+                if outcome == "failure_sent":
+                    print("Discord failure notification sent.")
+                else:
+                    print("Repeated watcher failure suppressed from Discord.")
         return 1
 
     latest = snapshot.get("latest_showing")
@@ -587,9 +709,14 @@ def main(argv: list[str] | None = None) -> int:
     else:
         print("Latest: none")
 
-    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
     if webhook_url:
         try:
+            status_outcome = notify_watcher_status(
+                args.notification_state,
+                webhook_url,
+                error=None,
+                checked_at=str(snapshot["checked_at"]),
+            )
             notification_count = notify_discord(
                 snapshot,
                 args.notification_state,
@@ -598,6 +725,8 @@ def main(argv: list[str] | None = None) -> int:
         except WatchError as exc:
             print(f"ERROR: {exc}", file=sys.stderr)
             return 2
+        if status_outcome == "recovery_sent":
+            print("Discord recovery notification sent.")
         if notification_count:
             print(f"Discord notification sent for {notification_count} new showings.")
         elif args.notification_state.exists():

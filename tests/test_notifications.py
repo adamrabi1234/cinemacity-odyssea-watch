@@ -5,7 +5,7 @@ from pathlib import Path
 
 import requests
 
-from src.watch import WatchError, notify_discord
+from src.watch import WatchError, notify_discord, notify_watcher_status
 
 
 WEBHOOK_URL = "https://discord.com/api/webhooks/123456/test-token"
@@ -110,6 +110,94 @@ class DiscordNotificationTests(unittest.TestCase):
                 )
             self.assertEqual(session.calls, [])
             self.assertFalse(state_path.exists())
+
+    def test_failure_is_sent_once_and_recovery_is_sent_once(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "state.json"
+            session = FakeSession()
+            first = notify_watcher_status(
+                state_path,
+                WEBHOOK_URL,
+                error="Cinema City API is offline",
+                checked_at="2026-09-01T06:01:00+02:00",
+                session=session,
+            )
+            repeated = notify_watcher_status(
+                state_path,
+                WEBHOOK_URL,
+                error="Cinema City API is still offline",
+                checked_at="2026-09-01T06:11:00+02:00",
+                session=session,
+            )
+            recovered = notify_watcher_status(
+                state_path,
+                WEBHOOK_URL,
+                error=None,
+                checked_at="2026-09-01T06:21:00+02:00",
+                session=session,
+            )
+            current = notify_watcher_status(
+                state_path,
+                WEBHOOK_URL,
+                error=None,
+                checked_at="2026-09-01T06:31:00+02:00",
+                session=session,
+            )
+            self.assertEqual(
+                (first, repeated, recovered, current),
+                ("failure_sent", "failure_suppressed", "recovery_sent", "status_current"),
+            )
+            self.assertEqual(len(session.calls), 2)
+            self.assertIn("kontrola selhala", session.calls[0][1]["json"]["content"])
+            self.assertIn("opět funguje", session.calls[1][1]["json"]["content"])
+
+    def test_failed_alert_is_retried_and_does_not_mark_it_sent(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "state.json"
+            with self.assertRaises(WatchError):
+                notify_watcher_status(
+                    state_path,
+                    WEBHOOK_URL,
+                    error="offline",
+                    session=FakeSession(requests.ConnectionError("discord offline")),
+                )
+            state = json.loads(state_path.read_text(encoding="utf-8"))
+            self.assertFalse(state["failure_alert_sent"])
+
+            session = FakeSession()
+            outcome = notify_watcher_status(
+                state_path,
+                WEBHOOK_URL,
+                error="offline",
+                session=session,
+            )
+            self.assertEqual(outcome, "failure_sent")
+            self.assertEqual(len(session.calls), 1)
+
+    def test_failure_before_first_success_does_not_announce_existing_showings(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state_path = Path(directory) / "state.json"
+            session = FakeSession()
+            notify_watcher_status(
+                state_path,
+                WEBHOOK_URL,
+                error="offline",
+                session=session,
+            )
+            notify_watcher_status(
+                state_path,
+                WEBHOOK_URL,
+                error=None,
+                session=session,
+            )
+            count = notify_discord(
+                snapshot(showing("one", "16:40")),
+                state_path,
+                WEBHOOK_URL,
+                session=session,
+            )
+            self.assertEqual(count, 0)
+            self.assertEqual(len(session.calls), 2)
 
 
 if __name__ == "__main__":

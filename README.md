@@ -49,6 +49,10 @@ Volitelná proměnná `DISCORD_WEBHOOK_URL` zapne oznámení do jednoho Discord 
 
 Stav oznámení je uložen v `data/notification-state.json` na trvalém volume. Aktualizuje se až po úspěšném odeslání; při dočasném selhání Discordu se stejné nové termíny zkusí poslat při následující kontrole.
 
+Watcher také pošle jedno upozornění při selhání živé kontroly Cinema City a jedno potvrzení po jejím obnovení. Další chyby během stejného výpadku se zapisují pouze do logu, takže Discord nedostává opakované zprávy každých několik minut.
+
+Pád celého kontejneru nemůže oznámit proces uvnitř něj. Pro tyto případy zapněte v globálním **Coolify → Notifications → Discord** události **Deployment Failure**, **Container Status Changes** a **Server Unreachable**. Tato externí kontrola doplňuje upozornění, která posílá samotný watcher.
+
 ### Proč nehrozí konflikt portů
 
 Compose soubor nepublikuje port 8000 přímo na hostitelském serveru. Port je dostupný jen v interní Docker síti a Coolify proxy rozlišuje aplikace podle domén. Více služeb proto může současně používat interní port 8000 bez vzájemného konfliktu. Ve firewallu není potřeba otevírat žádný nový port; veřejný provoz jde přes standardní HTTPS port 443.
