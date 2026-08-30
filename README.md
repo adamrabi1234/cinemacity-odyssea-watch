@@ -4,12 +4,12 @@ Watcher sleduje veřejné Cinema City API a hledá představení filmu **Odyssea
 
 ## Veřejné endpointy
 
-Při výchozím nastavení jsou data dostupná na:
+Po přiřazení domény v Coolify jsou data dostupná na:
 
-- `http://SERVER_IP:18080/latest.json` – poslední úspěšný snapshot, ideální pro pravidelné čtení
-- `http://SERVER_IP:18080/history.json` – historie změn
-- `http://SERVER_IP:18080/healthz` – krátká kontrola stavu
-- `http://SERVER_IP:18080/` – přehled endpointů
+- `https://VAŠE_DOMÉNA/latest.json` – poslední úspěšný snapshot, ideální pro pravidelné čtení
+- `https://VAŠE_DOMÉNA/history.json` – historie změn
+- `https://VAŠE_DOMÉNA/healthz` – krátká kontrola stavu
+- `https://VAŠE_DOMÉNA/` – přehled endpointů
 
 Server je pouze pro čtení. Odpovědi mají `Cache-Control: no-store`, aby čtenář nedostal starou kopii.
 
@@ -18,27 +18,16 @@ Server je pouze pro čtení. Odpovědi mají `Cache-Control: no-store`, aby čte
 1. V Coolify zvolte **New Resource → Public Repository**.
 2. Použijte repozitář `https://github.com/adamrabi1234/cinemacity-odyssea-watch` a větev `main`.
 3. Jako build pack zvolte **Docker Compose** a soubor `compose.yaml`.
-4. Doménu nevyplňujte. Aplikace zveřejní přímo port serveru.
-5. Volitelně nastavte environment proměnné:
-   - `PUBLIC_PORT=18080` – port na veřejné IP serveru
-   - `WATCH_INTERVAL_SECONDS=900` – kontrola každých 15 minut
-6. Proveďte deploy a zvenku ověřte `http://SERVER_IP:18080/healthz`.
+4. U služby `cinema-watch` v poli **Domains** použijte **Generate Domain**, případně zadejte vlastní subdoménu.
+5. Protože aplikace uvnitř kontejneru poslouchá na portu 8000, musí mít hodnota v Coolify tvar `https://VAŠE_DOMÉNA:8000`. Číslo zde pouze říká proxy, na který interní port má požadavky směrovat; návštěvník ho ve výsledné URL nepoužívá.
+6. Volitelně nastavte `WATCH_INTERVAL_SECONDS=900` pro kontrolu každých 15 minut. Prázdná nebo chybějící hodnota použije stejný výchozí interval.
+7. Proveďte deploy a zvenku ověřte `https://VAŠE_DOMÉNA/healthz`.
 
 Coolify Scheduled Tasks nejsou potřeba. Smyčka kontrol je součástí kontejneru a služba se po pádu nebo restartu serveru automaticky znovu spustí.
 
-### Volba volného portu
+### Proč nehrozí konflikt portů
 
-Výchozí `18080` je schválně méně běžný než `80`, `443` nebo `8000`. Před deployem lze na serveru zkontrolovat jeho dostupnost:
-
-```bash
-sudo ss -ltn '( sport = :18080 )'
-```
-
-Prázdný výstup znamená, že na portu nic neposlouchá. Pokud je obsazený, nastavte v Coolify například `PUBLIC_PORT=18081` nebo `PUBLIC_PORT=18082` a stejný port použijte v URL. Port musí být povolený také ve firewallu nebo u poskytovatele serveru; například s UFW:
-
-```bash
-sudo ufw allow 18080/tcp
-```
+Compose soubor nepublikuje port 8000 přímo na hostitelském serveru. Port je dostupný jen v interní Docker síti a Coolify proxy rozlišuje aplikace podle domén. Více služeb proto může současně používat interní port 8000 bez vzájemného konfliktu. Ve firewallu není potřeba otevírat žádný nový port; veřejný provoz jde přes standardní HTTPS port 443.
 
 ## Trvalá data
 
@@ -50,7 +39,7 @@ Pokud kontrola Cinema City API dočasně selže, HTTP server dál poskytuje posl
 
 ```bash
 docker compose up --build -d
-curl --fail http://localhost:18080/healthz
+docker compose exec cinema-watch python -c "import urllib.request; print(urllib.request.urlopen('http://127.0.0.1:8000/healthz').read().decode())"
 docker compose logs -f cinema-watch
 ```
 
@@ -78,8 +67,8 @@ python src/watch.py
 python -m unittest discover -s tests -v
 ```
 
-## Poznámka k přístupu z ChatGPT
+## Přístup z ChatGPT
 
-Nejdřív vyzkoušejte přímou adresu `http://SERVER_IP:PUBLIC_PORT/latest.json`. Pokud služba, která data čte, odmítá nešifrované HTTP nebo nestandardní port, není potřeba kupovat doménu: jako další krok lze použít bezplatný hostname ve tvaru `watch.SERVER_IP.sslip.io` a HTTPS proxy v Coolify.
+Pro scheduler použijte `https://VAŠE_DOMÉNA/latest.json`. HTTPS doména přes Coolify proxy je vhodnější než přímá IP adresa a nestandardní veřejný port.
 
 Repozitář neposílá notifikace a nic necommituje automaticky zpět na GitHub.

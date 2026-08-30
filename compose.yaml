@@ -8,8 +8,8 @@ services:
     environment:
       PORT: "8000"
       WATCH_INTERVAL_SECONDS: "${WATCH_INTERVAL_SECONDS:-900}"
-    ports:
-      - "${PUBLIC_PORT:-18080}:8000"
+    expose:
+      - "8000"
     volumes:
       - cinema-watch-data:/app/data
     healthcheck:
