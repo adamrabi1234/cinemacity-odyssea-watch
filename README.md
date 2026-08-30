@@ -1,84 +1,85 @@
 # Cinema City Odyssea watch
 
-Malý automatický watcher aktuálně vypsaných projekcí filmu **Odyssea** v Cinema City Praha Flora, které současně splňují **IMAX** a **70 mm**.
+Watcher sleduje veřejné Cinema City API a hledá představení filmu **Odyssea** v Praze. Aplikace je připravená jako samostatná Docker Compose služba pro Coolify: kontrolu provede hned po startu a potom ji opakuje v nastaveném intervalu. GitHub slouží pouze jako zdroj kódu; GitHub Actions nejsou potřeba.
 
-Projekt nescrapuje HTML. Při každém spuštění provede nové HTTP požadavky na stejné veřejné JSON API Cinema City CZ, které používá web `cinemacity.cz`, a z odpovědí vytvoří čitelný snapshot.
+## Veřejné endpointy
 
-## Aktuální stav
+Při výchozím nastavení jsou data dostupná na:
 
-- [Aktuální snapshot (`data/latest.json`)](data/latest.json)
-- [RAW `data/latest.json`](https://raw.githubusercontent.com/adamrabi1234/cinemacity-odyssea-watch/main/data/latest.json)
-- [Historie změn (`data/history.json`)](data/history.json)
-- [GitHub Actions](https://github.com/adamrabi1234/cinemacity-odyssea-watch/actions/workflows/watch.yml)
+- `http://SERVER_IP:18080/latest.json` – poslední úspěšný snapshot, ideální pro pravidelné čtení
+- `http://SERVER_IP:18080/history.json` – historie změn
+- `http://SERVER_IP:18080/healthz` – krátká kontrola stavu
+- `http://SERVER_IP:18080/` – přehled endpointů
 
-`checked_at` je čas dokončení posledního **úspěšného živého API dotazu** v časové zóně Europe/Prague. `checked_at_utc` je stejný okamžik v UTC. `latest.json` není historická cache: po každém úspěšném běhu je kompletně nahrazen stavem získaným ze živého API, včetně volatilních polí `sold_out` a `availability_ratio`.
+Server je pouze pro čtení. Odpovědi mají `Cache-Control: no-store`, aby čtenář nedostal starou kopii.
 
-Pokud API korektně vrátí žádné odpovídající projekce, jde o platný stav: `matching_showings_count` bude `0` a `latest_showing` bude `null`. Pokud některý požadavek selže, program skončí s nenulovým kódem a poslední správný `latest.json` nepřepíše.
+## Nasazení v Coolify
 
-## Ověřená API struktura
+1. V Coolify zvolte **New Resource → Public Repository**.
+2. Použijte repozitář `https://github.com/adamrabi1234/cinemacity-odyssea-watch` a větev `main`.
+3. Jako build pack zvolte **Docker Compose** a soubor `compose.yaml`.
+4. Doménu nevyplňujte. Aplikace zveřejní přímo port serveru.
+5. Volitelně nastavte environment proměnné:
+   - `PUBLIC_PORT=18080` – port na veřejné IP serveru
+   - `WATCH_INTERVAL_SECONDS=900` – kontrola každých 15 minut
+6. Proveďte deploy a zvenku ověřte `http://SERVER_IP:18080/healthz`.
 
-K 28. srpnu 2026 byly živými požadavky ověřeny tyto hodnoty:
+Coolify Scheduled Tasks nejsou potřeba. Smyčka kontrol je součástí kontejneru a služba se po pádu nebo restartu serveru automaticky znovu spustí.
 
-- Cinema City Praha Flora: API cinema ID `1052`, název `Praha Flora, OC FLORA`
-- Odyssea: film ID `7268s2r` (watcher ale film vybírá podle aktuálního názvu z API, ne pouze podle tohoto ID)
-- 70 mm: atribut `70-mm`
-- IMAX: `auditorium` = `IMAX VOLVO`, `auditoriumTinyName` = `IMAX`
+### Volba volného portu
 
-Použité endpointy pod base URL `https://www.cinemacity.cz/cz/data-api-service/v1/quickbook/10101`:
+Výchozí `18080` je schválně méně běžný než `80`, `443` nebo `8000`. Před deployem lze na serveru zkontrolovat jeho dostupnost:
 
-```text
-/cinemas/with-event/until/{date}
-/dates/in-cinema/{cinema_id}/until/{date}
-/film-events/in-cinema/{cinema_id}/at-date/{date}
+```bash
+sudo ss -ltn '( sport = :18080 )'
 ```
 
-API vyžaduje parametr `until`. Ověřená hodnota `9999-12-31` vrací všechna data, která Cinema City právě nabízí, takže watcher nepoužívá umělý sedmi- nebo čtrnáctidenní limit. Samotné Cinema City zpravidla zveřejňuje program jen na omezenou dobu dopředu.
+Prázdný výstup znamená, že na portu nic neposlouchá. Pokud je obsazený, nastavte v Coolify například `PUBLIC_PORT=18081` nebo `PUBLIC_PORT=18082` a stejný port použijte v URL. Port musí být povolený také ve firewallu nebo u poskytovatele serveru; například s UFW:
+
+```bash
+sudo ufw allow 18080/tcp
+```
+
+## Trvalá data
+
+Docker volume `cinema-watch-data` je připojený do `/app/data`. Snapshoty tedy zůstanou zachované při novém deployi nebo výměně kontejneru. Soubory v Git repozitáři slouží jen jako počáteční data při prvním vytvoření volume.
+
+Pokud kontrola Cinema City API dočasně selže, HTTP server dál poskytuje poslední platný snapshot a další kontrolu zkusí po uplynutí intervalu.
 
 ## Lokální spuštění
 
-Vyžaduje Python 3.12 nebo novější.
+```bash
+docker compose up --build -d
+curl --fail http://localhost:18080/healthz
+docker compose logs -f cinema-watch
+```
+
+Zastavení bez smazání uložených dat:
 
 ```bash
-python -m venv .venv
-# Windows: .venv\Scripts\activate
-# Linux/macOS: source .venv/bin/activate
+docker compose down
+```
+
+## Konfigurace vyhledávání
+
+Soubor `config.json` určuje kino, hledaný název filmu a požadovaný formát. Současné nastavení:
+
+- Cinema City API pro ČR (`quickbook/10101`)
+- kino, jehož název obsahuje `Praha Flora` (fallback ID `1052`)
+- titul, jehož název obsahuje `Odyssea`
+- povinný atribut `70-mm`
+- pouze sál IMAX
+
+## Kontrola bez Dockeru
+
+```bash
 python -m pip install -r requirements.txt
-python -m unittest discover -s tests -v
 python src/watch.py
+python -m unittest discover -s tests -v
 ```
 
-Watcher zapisuje `data/latest.json` při každém úspěšném běhu. `data/history.json` mění jen tehdy, když přibude nebo zmizí event ID či se změní nejpozdější dostupná projekce. Historie se nikdy nepoužívá jako zdroj aktuálního stavu.
+## Poznámka k přístupu z ChatGPT
 
-## GitHub Actions
+Nejdřív vyzkoušejte přímou adresu `http://SERVER_IP:PUBLIC_PORT/latest.json`. Pokud služba, která data čte, odmítá nešifrované HTTP nebo nestandardní port, není potřeba kupovat doménu: jako další krok lze použít bezplatný hostname ve tvaru `watch.SERVER_IP.sslip.io` a HTTPS proxy v Coolify.
 
-Workflow `.github/workflows/watch.yml` běží přibližně každých 15 minut (`:07`, `:22`, `:37`, `:52`) a podporuje i ruční spuštění:
-
-1. otevřít záložku **Actions**,
-2. vybrat **Watch Cinema City showings**,
-3. zvolit **Run workflow**.
-
-Po úspěšném dotazu workflow commitne změněné JSON soubory zpět do větve. `concurrency` brání překryvu dvou běhů a `contents: write` dává vestavěnému `GITHUB_TOKEN` pouze oprávnění potřebné k zápisu obsahu.
-
-## Změna sledovaného filmu, kina nebo formátu
-
-Všechny běžně měněné hodnoty jsou v [`config.json`](config.json):
-
-```json
-{
-  "film_name": "Odyssea",
-  "cinema_name_contains": "Praha Flora",
-  "cinema_id_fallback": "1052",
-  "required_attributes": ["70-mm"],
-  "require_imax": true
-}
-```
-
-Kino se při každém běhu primárně znovu dohledává podle názvu; `cinema_id_fallback` umožňuje vrátit platný prázdný snapshot i v okamžiku, kdy endpoint `with-event` kino neuvádí, protože nemá žádný program. Film se mapuje z pole `films` každé denní odpovědi podle názvu a jeho ID se tedy může změnit.
-
-Při změně konfigurace je vhodné archivovat nebo smazat dosavadní `data/history.json`, protože historie jinak bude obsahovat také eventy předchozího cíle.
-
-## Omezení
-
-- Jde o nezdokumentované veřejné API Cinema City; změna endpointů nebo JSON struktury způsobí bezpečné selhání běhu, dokud se watcher neupraví.
-- GitHub plánované workflow může být při vysokém zatížení spuštěno se zpožděním.
-- Přímé `booking_url` se bezpečně odvozuje z `presentationCode` jako `https://tickets.cinemacity.cz/order/{presentationCode}`; původní odkazy z API zůstávají ve snapshotu v `api_booking_links`.
+Repozitář neposílá notifikace a nic necommituje automaticky zpět na GitHub.

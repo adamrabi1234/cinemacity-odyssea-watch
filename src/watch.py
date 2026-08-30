@@ -52,7 +52,7 @@ class ApiClient:
         self.session.headers.update(
             {
                 "Accept": "application/json",
-                "User-Agent": "cinemacity-odyssea-watch/1.0 (+GitHub Actions)",
+                "User-Agent": "cinemacity-odyssea-watch/1.0 (+self-hosted watcher)",
             }
         )
 
