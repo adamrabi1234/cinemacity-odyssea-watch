@@ -24,7 +24,9 @@ from src.watch import WatchError, format_discord_line
 APP_ROOT = Path(__file__).resolve().parent.parent
 LATEST_PATH = APP_ROOT / "data" / "latest.json"
 INTERACTION_PATH = "/discord/interactions"
-COMMAND_NAME = "kontrola"
+NEW_DATES_COMMAND = "newdates"
+ALL_DATES_COMMAND = "alldates"
+COMMAND_NAMES = frozenset({NEW_DATES_COMMAND, ALL_DATES_COMMAND})
 EPHEMERAL_FLAG = 1 << 6
 MAX_REQUEST_BYTES = 64 * 1024
 MAX_SIGNATURE_AGE_SECONDS = 300
@@ -129,7 +131,7 @@ def authorize_command(payload: dict[str, Any], config: DiscordConfig) -> str | N
     if interaction_user_id(payload) not in config.allowed_user_ids:
         return "Tento příkaz pro tebe není povolený."
     data = payload.get("data")
-    if not isinstance(data, dict) or str(data.get("name") or "") != COMMAND_NAME:
+    if not isinstance(data, dict) or str(data.get("name") or "") not in COMMAND_NAMES:
         return "Neznámý příkaz."
     return None
 
@@ -160,17 +162,49 @@ class CommandLimiter:
             self._running = False
 
 
-def command_payloads(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
-    """Build bounded ephemeral interaction responses with all current showings."""
+def command_payloads(
+    snapshot: dict[str, Any],
+    command_name: str,
+    *,
+    previous_snapshot: dict[str, Any] | None = None,
+) -> list[dict[str, Any]]:
+    """Build bounded ephemeral responses for all or newly added showings."""
     showings = [item for item in snapshot.get("showings", []) if isinstance(item, dict)]
+    if command_name == NEW_DATES_COMMAND:
+        if previous_snapshot is None:
+            showings = []
+        else:
+            previous_ids = {
+                str(item.get("event_id"))
+                for item in previous_snapshot.get("showings", [])
+                if isinstance(item, dict) and item.get("event_id") is not None
+            }
+            showings = [
+                item
+                for item in showings
+                if item.get("event_id") is not None
+                and str(item.get("event_id")) not in previous_ids
+            ]
+        empty_message = "✅ Kontrola dokončena. Nebyl nalezen žádný nový termín."
+    elif command_name == ALL_DATES_COMMAND:
+        empty_message = "✅ Kontrola dokončena. Aktuálně nebyl nalezen žádný termín."
+    else:
+        raise DiscordInteractionError("Unknown Discord command name.")
+
+    showings.sort(key=lambda showing: str(showing.get("datetime") or ""))
     count = len(showings)
     if not showings:
         return [
             {
-                "content": "✅ Kontrola dokončena. Aktuálně nebyl nalezen žádný termín.",
+                "content": empty_message,
                 "allowed_mentions": {"parse": []},
             }
         ]
+
+    if command_name == NEW_DATES_COMMAND:
+        summary = "1 nový termín" if count == 1 else f"{count} nových termínů"
+    else:
+        summary = f"{count} aktuálních termínů"
 
     lines = [format_discord_line(showing) for showing in showings]
     descriptions: list[str] = []
@@ -193,7 +227,7 @@ def command_payloads(snapshot: dict[str, Any]) -> list[dict[str, Any]]:
         part = "" if len(descriptions) == 1 else f" — část {index + 1}/{len(descriptions)}"
         payloads.append(
             {
-                "content": f"🎬 **Kontrola dokončena: {count} aktuálních termínů**{part}",
+                "content": f"🎬 **Kontrola dokončena: {summary}**{part}",
                 "embeds": [
                     {
                         "description": description,
@@ -259,11 +293,20 @@ def complete_command(
     config: DiscordConfig,
     token: str,
     limiter: CommandLimiter,
+    command_name: str,
     *,
     session: requests.Session | None = None,
 ) -> None:
     """Run the watcher after a deferred response and edit that response."""
     try:
+        previous_snapshot: dict[str, Any] | None = None
+        if command_name == NEW_DATES_COMMAND:
+            try:
+                loaded = json.loads(LATEST_PATH.read_text(encoding="utf-8"))
+                if isinstance(loaded, dict):
+                    previous_snapshot = loaded
+            except FileNotFoundError:
+                pass
         returncode, stdout, stderr = run_check_subprocess()
         if stdout:
             print(stdout.rstrip(), flush=True)
@@ -271,7 +314,11 @@ def complete_command(
             print(stderr.rstrip(), file=sys.stderr, flush=True)
         if returncode == 0:
             snapshot = json.loads(LATEST_PATH.read_text(encoding="utf-8"))
-            payloads = command_payloads(snapshot)
+            payloads = command_payloads(
+                snapshot,
+                command_name,
+                previous_snapshot=previous_snapshot,
+            )
         elif returncode == 3:
             payloads = [
                 {

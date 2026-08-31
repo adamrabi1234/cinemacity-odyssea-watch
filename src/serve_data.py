@@ -12,7 +12,6 @@ from typing import Any
 from urllib.parse import urlsplit
 
 from src.discord_interactions import (
-    COMMAND_NAME,
     INTERACTION_PATH,
     MAX_REQUEST_BYTES,
     CommandLimiter,
@@ -148,6 +147,8 @@ class DataHandler(BaseHTTPRequestHandler):
             self._send_json(200, ephemeral_message(denial))
             return
 
+        command_name = str(payload["data"]["name"])
+
         reserved, reason, remaining = COMMAND_LIMITER.reserve()
         if not reserved:
             if reason == "running":
@@ -175,8 +176,8 @@ class DataHandler(BaseHTTPRequestHandler):
         )
         threading.Thread(
             target=complete_command,
-            args=(config, token, COMMAND_LIMITER),
-            name=f"discord-{COMMAND_NAME}",
+            args=(config, token, COMMAND_LIMITER, command_name),
+            name=f"discord-{command_name}",
             daemon=True,
         ).start()
 

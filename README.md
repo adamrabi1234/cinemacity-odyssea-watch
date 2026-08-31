@@ -10,7 +10,7 @@ Po přiřazení domény v Coolify jsou data dostupná na:
 - `https://VAŠE_DOMÉNA/history.json` – historie změn
 - `https://VAŠE_DOMÉNA/healthz` – krátká kontrola stavu
 - `https://VAŠE_DOMÉNA/` – přehled endpointů
-- `https://VAŠE_DOMÉNA/discord/interactions` – podepsaný endpoint pro Discord příkaz `/kontrola`
+- `https://VAŠE_DOMÉNA/discord/interactions` – podepsaný endpoint pro Discord příkazy `/newdates` a `/alldates`
 
 Veřejné datové endpointy jsou pouze pro čtení. Discord endpoint přijímá jen podepsané interakce od Discordu. Odpovědi mají `Cache-Control: no-store`, aby čtenář nedostal starou kopii.
 
@@ -54,9 +54,9 @@ Watcher také pošle jedno upozornění při selhání živé kontroly Cinema Ci
 
 Pád celého kontejneru nemůže oznámit proces uvnitř něj. Pro tyto případy zapněte v globálním **Coolify → Notifications → Discord** události **Deployment Failure**, **Container Status Changes** a **Server Unreachable**. Tato externí kontrola doplňuje upozornění, která posílá samotný watcher.
 
-### Discord příkaz `/kontrola`
+### Discord příkazy `/newdates` a `/alldates`
 
-Volitelná Discord aplikace umí spustit živou kontrolu mimo rozvrh. Příkaz odpovídá soukromě pouze uživateli, který jej vyvolal, a vypíše všechny aktuální termíny s rezervačními odkazy. Endpoint přijímá jen požadavky s platným Ed25519 podpisem Discordu, povoleným ID serveru a povoleným ID uživatele. Současně může běžet jen jedna kontrola a mezi ručními spuštěními je 60sekundová ochranná prodleva.
+Volitelná Discord aplikace umí spustit živou kontrolu mimo rozvrh. `/newdates` vypíše pouze termíny přidané od předchozí kontroly, případně oznámí, že žádné nové nejsou. `/alldates` vypíše všechny aktuální termíny s rezervačními odkazy. Oba příkazy odpovídají soukromě pouze uživateli, který je vyvolal. Endpoint přijímá jen požadavky s platným Ed25519 podpisem Discordu, povoleným ID serveru a povoleným ID uživatele. Současně může běžet jen jedna kontrola a mezi ručními spuštěními je 60sekundová ochranná prodleva.
 
 V Coolify nastavte jako secrets nebo runtime proměnné:
 
@@ -79,7 +79,7 @@ python src/register_discord_command.py
 
 Po úspěšné registraci lze `DISCORD_BOT_TOKEN` z runtime prostředí odstranit; samotné přijímání a odpovídání na příkaz jej nepotřebuje. Token ani ostatní tajné hodnoty nikdy nepatří do Git repozitáře.
 
-Automatická upozornění nadále používají `DISCORD_WEBHOOK_URL`, zatímco `/kontrola` odpovídá pod identitou Discord aplikace. Webhook lze pojmenovat a vizuálně nastavit stejně jako aplikaci, takže v kanálu působí jednotně bez nutnosti ponechávat bot token v běžícím kontejneru.
+Automatická upozornění nadále používají `DISCORD_WEBHOOK_URL`, zatímco `/newdates` a `/alldates` odpovídají pod identitou Discord aplikace. Webhook lze pojmenovat a vizuálně nastavit stejně jako aplikaci, takže v kanálu působí jednotně bez nutnosti ponechávat bot token v běžícím kontejneru.
 
 ### Proč nehrozí konflikt portů
 

@@ -5,6 +5,8 @@ import requests
 from nacl.signing import SigningKey
 
 from src.discord_interactions import (
+    ALL_DATES_COMMAND,
+    NEW_DATES_COMMAND,
     CommandLimiter,
     DiscordConfig,
     DiscordInteractionError,
@@ -31,14 +33,14 @@ def config(public_key: str = "11" * 32) -> DiscordConfig:
     )
 
 
-def command_payload(**updates):
+def command_payload(command_name: str = NEW_DATES_COMMAND, **updates):
     payload = {
         "type": 2,
         "application_id": APPLICATION_ID,
         "guild_id": GUILD_ID,
         "token": TOKEN,
         "member": {"user": {"id": USER_ID}},
-        "data": {"name": "kontrola"},
+        "data": {"name": command_name},
     }
     payload.update(updates)
     return payload
@@ -129,6 +131,13 @@ class DiscordInteractionTests(unittest.TestCase):
 
     def test_command_is_restricted_to_configured_guild_and_user(self):
         self.assertIsNone(authorize_command(command_payload(), config()))
+        self.assertIsNone(
+            authorize_command(command_payload(ALL_DATES_COMMAND), config())
+        )
+        self.assertIn(
+            "Neznámý",
+            authorize_command(command_payload("kontrola"), config()),
+        )
         denied_guild = command_payload(guild_id="999999999999999999")
         self.assertIn("serveru", authorize_command(denied_guild, config()))
         denied_user = command_payload(member={"user": {"id": "999999999999999999"}})
@@ -150,13 +159,55 @@ class DiscordInteractionTests(unittest.TestCase):
             "checked_at": "2026-09-01T06:01:00+02:00",
             "showings": [showing("one", "16:40"), showing("two", "20:30")],
         }
-        payloads = command_payloads(snapshot)
+        payloads = command_payloads(snapshot, ALL_DATES_COMMAND)
         rendered = "\n".join(
             payload["embeds"][0]["description"] for payload in payloads
         )
         self.assertIn("https://tickets.cinemacity.cz/order/one", rendered)
         self.assertIn("https://tickets.cinemacity.cz/order/two", rendered)
         self.assertIn("2 aktuálních termínů", payloads[0]["content"])
+
+    def test_new_dates_response_contains_only_added_showings(self):
+        previous = {
+            "showings": [showing("one", "16:40")],
+        }
+        current = {
+            "checked_at": "2026-09-01T06:01:00+02:00",
+            "showings": [showing("one", "16:40"), showing("two", "20:30")],
+        }
+        payloads = command_payloads(
+            current,
+            NEW_DATES_COMMAND,
+            previous_snapshot=previous,
+        )
+        rendered = "\n".join(
+            payload["embeds"][0]["description"] for payload in payloads
+        )
+        self.assertNotIn("https://tickets.cinemacity.cz/order/one", rendered)
+        self.assertIn("https://tickets.cinemacity.cz/order/two", rendered)
+        self.assertIn("1 nový termín", payloads[0]["content"])
+
+    def test_new_dates_response_reports_no_changes(self):
+        current = {
+            "checked_at": "2026-09-01T06:01:00+02:00",
+            "showings": [showing("one", "16:40")],
+        }
+        payloads = command_payloads(
+            current,
+            NEW_DATES_COMMAND,
+            previous_snapshot=current,
+        )
+        self.assertIn("žádný nový termín", payloads[0]["content"])
+        self.assertNotIn("embeds", payloads[0])
+
+    def test_new_dates_without_baseline_does_not_report_everything_as_new(self):
+        current = {
+            "checked_at": "2026-09-01T06:01:00+02:00",
+            "showings": [showing("one", "16:40")],
+        }
+        payloads = command_payloads(current, NEW_DATES_COMMAND)
+        self.assertIn("žádný nový termín", payloads[0]["content"])
+        self.assertNotIn("embeds", payloads[0])
 
     def test_interaction_response_edits_original_then_posts_followups(self):
         session = FakeSession()

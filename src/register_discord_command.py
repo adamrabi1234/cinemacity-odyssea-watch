@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Register the guild-scoped /kontrola command once with Discord."""
+"""Replace guild commands with /newdates and /alldates."""
 
 from __future__ import annotations
 
@@ -27,13 +27,20 @@ def main() -> int:
         "https://discord.com/api/v10/applications/"
         f"{application_id}/guilds/{guild_id}/commands"
     )
-    payload = {
-        "name": "kontrola",
-        "description": "Okamžitě zkontroluje nové termíny Cinema City",
-        "type": 1,
-    }
+    payload = [
+        {
+            "name": "newdates",
+            "description": "Zkontroluje a zobrazí pouze nově přidané termíny",
+            "type": 1,
+        },
+        {
+            "name": "alldates",
+            "description": "Zkontroluje a zobrazí všechny aktuální termíny",
+            "type": 1,
+        },
+    ]
     try:
-        response = requests.post(
+        response = requests.put(
             url,
             headers={
                 "Authorization": f"Bot {bot_token}",
@@ -50,8 +57,12 @@ def main() -> int:
         print(f"Discord command registration failed:{detail}", file=sys.stderr)
         return 1
 
-    command = response.json()
-    print(f"Registered /kontrola command with ID {command.get('id', 'unknown')}.")
+    commands = response.json()
+    registered = ", ".join(
+        f"/{command.get('name', 'unknown')} ({command.get('id', 'unknown')})"
+        for command in commands
+    )
+    print(f"Registered guild commands: {registered}.")
     return 0
 
 
