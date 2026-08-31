@@ -24,4 +24,4 @@ run_watcher
   done
 ) &
 
-exec python src/serve_data.py
+exec python -m src.serve_data
