@@ -5,10 +5,25 @@ from __future__ import annotations
 
 import json
 import os
+import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
+
+from src.discord_interactions import (
+    COMMAND_NAME,
+    INTERACTION_PATH,
+    MAX_REQUEST_BYTES,
+    CommandLimiter,
+    DiscordInteractionError,
+    authorize_command,
+    complete_command,
+    ephemeral_message,
+    interaction_url,
+    load_discord_config,
+    verify_request_signature,
+)
 
 
 DATA_DIR = Path(os.environ.get("DATA_DIR", "data"))
@@ -16,6 +31,7 @@ PUBLIC_FILES = {
     "/latest.json": DATA_DIR / "latest.json",
     "/history.json": DATA_DIR / "history.json",
 }
+COMMAND_LIMITER = CommandLimiter()
 
 
 def read_json(path: Path) -> Any:
@@ -59,6 +75,7 @@ class DataHandler(BaseHTTPRequestHandler):
                 "latest": "/latest.json",
                 "history": "/history.json",
                 "health": "/healthz",
+                "discord_interactions": INTERACTION_PATH,
                 "checked_at": latest.get("checked_at"),
                 "matching_showings_count": latest.get("matching_showings_count"),
             }
@@ -80,6 +97,88 @@ class DataHandler(BaseHTTPRequestHandler):
     def do_HEAD(self) -> None:
         status, document = self._document_for_path(urlsplit(self.path).path)
         self._send_json(status, document, head_only=True)
+
+    def do_POST(self) -> None:
+        if urlsplit(self.path).path != INTERACTION_PATH:
+            self._send_json(404, {"error": "not_found"})
+            return
+
+        try:
+            config = load_discord_config()
+        except DiscordInteractionError as exc:
+            self._send_json(503, {"error": "discord_configuration_invalid"})
+            print(f"ERROR: {exc}", flush=True)
+            return
+        if config is None:
+            self._send_json(503, {"error": "discord_commands_disabled"})
+            return
+
+        try:
+            content_length = int(self.headers.get("Content-Length", "0"))
+        except ValueError:
+            content_length = -1
+        if not 0 < content_length <= MAX_REQUEST_BYTES:
+            self._send_json(413, {"error": "invalid_request_size"})
+            return
+        body = self.rfile.read(content_length)
+        try:
+            verify_request_signature(
+                config.public_key,
+                self.headers.get("X-Signature-Timestamp", ""),
+                self.headers.get("X-Signature-Ed25519", ""),
+                body,
+            )
+            payload = json.loads(body)
+            if not isinstance(payload, dict):
+                raise DiscordInteractionError("Discord request body must be an object.")
+        except (DiscordInteractionError, json.JSONDecodeError):
+            self._send_json(401, {"error": "invalid_discord_request"})
+            return
+
+        interaction_type = payload.get("type")
+        if interaction_type == 1:
+            self._send_json(200, {"type": 1})
+            return
+        if interaction_type != 2:
+            self._send_json(400, {"error": "unsupported_interaction_type"})
+            return
+
+        denial = authorize_command(payload, config)
+        if denial:
+            self._send_json(200, ephemeral_message(denial))
+            return
+
+        reserved, reason, remaining = COMMAND_LIMITER.reserve()
+        if not reserved:
+            if reason == "running":
+                message = "⏳ Kontrola už probíhá. Počkej prosím na její výsledek."
+            else:
+                message = f"⏱️ Zkus příkaz znovu přibližně za {remaining} sekund."
+            self._send_json(200, ephemeral_message(message))
+            return
+
+        token = str(payload.get("token") or "")
+        try:
+            # Validate before acknowledging so malformed data never reaches a worker.
+            interaction_url(config, token, original=True)
+        except DiscordInteractionError:
+            COMMAND_LIMITER.finish()
+            self._send_json(401, {"error": "invalid_interaction_token"})
+            return
+
+        self._send_json(
+            200,
+            {
+                "type": 5,
+                "data": {"flags": 1 << 6},
+            },
+        )
+        threading.Thread(
+            target=complete_command,
+            args=(config, token, COMMAND_LIMITER),
+            name=f"discord-{COMMAND_NAME}",
+            daemon=True,
+        ).start()
 
 
 def main() -> None:

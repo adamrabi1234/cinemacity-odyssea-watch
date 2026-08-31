@@ -17,6 +17,7 @@ from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 
 import requests
+from filelock import FileLock, Timeout
 
 
 PRAGUE_TZ = ZoneInfo("Europe/Prague")
@@ -24,6 +25,7 @@ DEFAULT_CONFIG = Path("config.json")
 DEFAULT_LATEST = Path("data/latest.json")
 DEFAULT_HISTORY = Path("data/history.json")
 DEFAULT_NOTIFICATION_STATE = Path("data/notification-state.json")
+DEFAULT_CHECK_LOCK = Path("data/check.lock")
 
 
 class WatchError(RuntimeError):
@@ -663,15 +665,8 @@ def run(config_path: Path, latest_path: Path, history_path: Path) -> dict[str, A
     return snapshot
 
 
-def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
-    parser.add_argument("--latest", type=Path, default=DEFAULT_LATEST)
-    parser.add_argument("--history", type=Path, default=DEFAULT_HISTORY)
-    parser.add_argument(
-        "--notification-state", type=Path, default=DEFAULT_NOTIFICATION_STATE
-    )
-    args = parser.parse_args(argv)
+def run_main_cycle(args: argparse.Namespace) -> int:
+    """Run one complete watcher cycle while the caller holds the process lock."""
     webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", "").strip()
     attempted_at = datetime.now(PRAGUE_TZ).replace(microsecond=0).isoformat()
     try:
@@ -732,6 +727,26 @@ def main(argv: list[str] | None = None) -> int:
         elif args.notification_state.exists():
             print("Discord notification state is current; no new showings.")
     return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
+    parser.add_argument("--latest", type=Path, default=DEFAULT_LATEST)
+    parser.add_argument("--history", type=Path, default=DEFAULT_HISTORY)
+    parser.add_argument(
+        "--notification-state", type=Path, default=DEFAULT_NOTIFICATION_STATE
+    )
+    parser.add_argument("--check-lock", type=Path, default=DEFAULT_CHECK_LOCK)
+    args = parser.parse_args(argv)
+
+    args.check_lock.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with FileLock(str(args.check_lock), timeout=0):
+            return run_main_cycle(args)
+    except Timeout:
+        print("Watcher check skipped because another check is already running.")
+        return 3
 
 
 if __name__ == "__main__":

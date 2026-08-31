@@ -1,2 +1,4 @@
 requests>=2.32.3,<3
 tzdata>=2025.2
+filelock>=3.16,<4
+PyNaCl>=1.5,<2

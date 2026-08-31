@@ -4,7 +4,16 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from src.watch import WatchError, latest_from_showings, matches_target, run, select_cinema
+from filelock import FileLock
+
+from src.watch import (
+    WatchError,
+    latest_from_showings,
+    main,
+    matches_target,
+    run,
+    select_cinema,
+)
 
 
 FIXTURE = Path(__file__).parent / "fixtures" / "film_events.json"
@@ -85,6 +94,13 @@ class FilteringTests(unittest.TestCase):
 
             self.assertEqual(latest.read_text(encoding="utf-8"), original)
             self.assertFalse(history.exists())
+
+    def test_second_process_skips_when_check_lock_is_held(self):
+        with tempfile.TemporaryDirectory() as directory:
+            lock_path = Path(directory) / "check.lock"
+            with FileLock(str(lock_path), timeout=0):
+                result = main(["--check-lock", str(lock_path)])
+            self.assertEqual(result, 3)
 
 
 if __name__ == "__main__":

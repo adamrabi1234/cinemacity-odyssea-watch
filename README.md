@@ -10,8 +10,9 @@ Po přiřazení domény v Coolify jsou data dostupná na:
 - `https://VAŠE_DOMÉNA/history.json` – historie změn
 - `https://VAŠE_DOMÉNA/healthz` – krátká kontrola stavu
 - `https://VAŠE_DOMÉNA/` – přehled endpointů
+- `https://VAŠE_DOMÉNA/discord/interactions` – podepsaný endpoint pro Discord příkaz `/kontrola`
 
-Server je pouze pro čtení. Odpovědi mají `Cache-Control: no-store`, aby čtenář nedostal starou kopii.
+Veřejné datové endpointy jsou pouze pro čtení. Discord endpoint přijímá jen podepsané interakce od Discordu. Odpovědi mají `Cache-Control: no-store`, aby čtenář nedostal starou kopii.
 
 ## Nasazení v Coolify
 
@@ -52,6 +53,33 @@ Stav oznámení je uložen v `data/notification-state.json` na trvalém volume. 
 Watcher také pošle jedno upozornění při selhání živé kontroly Cinema City a jedno potvrzení po jejím obnovení. Další chyby během stejného výpadku se zapisují pouze do logu, takže Discord nedostává opakované zprávy každých několik minut.
 
 Pád celého kontejneru nemůže oznámit proces uvnitř něj. Pro tyto případy zapněte v globálním **Coolify → Notifications → Discord** události **Deployment Failure**, **Container Status Changes** a **Server Unreachable**. Tato externí kontrola doplňuje upozornění, která posílá samotný watcher.
+
+### Discord příkaz `/kontrola`
+
+Volitelná Discord aplikace umí spustit živou kontrolu mimo rozvrh. Příkaz odpovídá soukromě pouze uživateli, který jej vyvolal, a vypíše všechny aktuální termíny s rezervačními odkazy. Endpoint přijímá jen požadavky s platným Ed25519 podpisem Discordu, povoleným ID serveru a povoleným ID uživatele. Současně může běžet jen jedna kontrola a mezi ručními spuštěními je 60sekundová ochranná prodleva.
+
+V Coolify nastavte jako secrets nebo runtime proměnné:
+
+- `DISCORD_APPLICATION_ID` – Application ID z Discord Developer Portal
+- `DISCORD_PUBLIC_KEY` – Public Key z Discord Developer Portal
+- `DISCORD_ALLOWED_GUILD_ID` – ID jediného povoleného Discord serveru
+- `DISCORD_ALLOWED_USER_IDS` – jedno nebo více povolených uživatelských ID oddělených čárkou
+
+V Discord Developer Portal nastavte **Interactions Endpoint URL** na:
+
+```text
+https://VAŠE_DOMÉNA/discord/interactions
+```
+
+Discord při uložení odešle podepsaný `PING`, který endpoint ověří a potvrdí. Pro jednorázovou registraci příkazu přidejte do Coolify jako secret `DISCORD_BOT_TOKEN` a uvnitř kontejneru spusťte:
+
+```bash
+python src/register_discord_command.py
+```
+
+Po úspěšné registraci lze `DISCORD_BOT_TOKEN` z runtime prostředí odstranit; samotné přijímání a odpovídání na příkaz jej nepotřebuje. Token ani ostatní tajné hodnoty nikdy nepatří do Git repozitáře.
+
+Automatická upozornění nadále používají `DISCORD_WEBHOOK_URL`, zatímco `/kontrola` odpovídá pod identitou Discord aplikace. Webhook lze pojmenovat a vizuálně nastavit stejně jako aplikaci, takže v kanálu působí jednotně bez nutnosti ponechávat bot token v běžícím kontejneru.
 
 ### Proč nehrozí konflikt portů
 
