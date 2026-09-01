@@ -32,28 +32,22 @@ def adaptive_window(now: datetime) -> tuple[datetime, datetime, int]:
     weekday = now.weekday()
 
     if weekday == 0:
-        if current_time < time(7, 0):
-            return midnight - timedelta(hours=1), midnight + timedelta(hours=7), 14400
         if current_time < time(18, 0):
-            return midnight + timedelta(hours=7), midnight + timedelta(hours=18), 3600
+            return midnight, midnight + timedelta(hours=18), 3600
         return midnight + timedelta(hours=18), midnight + timedelta(days=1), 600
 
     if weekday == 1:
         if current_time < time(6, 0):
-            return midnight, midnight + timedelta(hours=6), 14400
-        if current_time < time(14, 0):
-            return midnight + timedelta(hours=6), midnight + timedelta(hours=14), 600
+            return midnight, midnight + timedelta(hours=6), 3600
         if current_time < time(22, 0):
-            return midnight + timedelta(hours=14), midnight + timedelta(hours=22), 1800
-        if current_time < time(23, 0):
-            return midnight + timedelta(hours=22), midnight + timedelta(hours=23), 3600
-        return midnight + timedelta(hours=23), midnight + timedelta(days=1, hours=7), 14400
+            return midnight + timedelta(hours=6), midnight + timedelta(hours=22), 600
+        return midnight + timedelta(hours=22), midnight + timedelta(days=1), 3600
 
     if current_time < time(7, 0):
-        return midnight - timedelta(hours=1), midnight + timedelta(hours=7), 14400
+        return midnight, midnight + timedelta(hours=7), 3600
     if current_time < time(23, 0):
-        return midnight + timedelta(hours=7), midnight + timedelta(hours=23), 3600
-    return midnight + timedelta(hours=23), midnight + timedelta(days=1, hours=7), 14400
+        return midnight + timedelta(hours=7), midnight + timedelta(hours=23), 1800
+    return midnight + timedelta(hours=23), midnight + timedelta(days=1), 3600
 
 
 def next_adaptive_check(now: datetime) -> datetime:

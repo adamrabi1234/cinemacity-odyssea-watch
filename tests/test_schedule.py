@@ -31,20 +31,26 @@ class ScheduleTests(unittest.TestCase):
             660,
         )
 
-    def test_tuesday_afternoon_uses_thirty_minutes(self):
-        self.assertEqual(seconds_until_next_check(prague_datetime("2026-09-01", 14, 1)), 1800)
+    def test_tuesday_afternoon_uses_ten_minutes(self):
+        self.assertEqual(seconds_until_next_check(prague_datetime("2026-09-01", 14, 1)), 600)
 
-    def test_regular_daytime_uses_one_hour(self):
-        self.assertEqual(seconds_until_next_check(prague_datetime("2026-09-02", 12, 1)), 3600)
+    def test_regular_daytime_uses_thirty_minutes(self):
+        self.assertEqual(seconds_until_next_check(prague_datetime("2026-09-02", 12, 1)), 1800)
 
-    def test_regular_night_uses_four_hours(self):
-        self.assertEqual(seconds_until_next_check(prague_datetime("2026-09-02", 23, 1)), 14400)
+    def test_outside_release_window_uses_one_hour(self):
+        self.assertEqual(seconds_until_next_check(prague_datetime("2026-09-02", 23, 1)), 3600)
 
-    def test_hourly_check_is_one_minute_after_the_hour(self):
+    def test_outside_window_check_is_one_minute_after_the_hour(self):
         self.assertEqual(
-            seconds_until_next_check(prague_datetime("2026-09-02", 12, 30)),
+            seconds_until_next_check(prague_datetime("2026-09-02", 23, 30)),
             1860,
         )
+
+    def test_monday_daytime_outside_window_uses_one_hour(self):
+        self.assertEqual(seconds_until_next_check(prague_datetime("2026-08-31", 12, 1)), 3600)
+
+    def test_tuesday_after_release_window_uses_one_hour(self):
+        self.assertEqual(seconds_until_next_check(prague_datetime("2026-09-01", 22, 1)), 3600)
 
     def test_fixed_interval_override(self):
         self.assertEqual(

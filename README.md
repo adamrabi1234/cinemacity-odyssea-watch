@@ -33,10 +33,9 @@ Coolify Scheduled Tasks nejsou potřeba. Smyčka kontrol je součástí kontejne
 | Období | Interval |
 | --- | ---: |
 | Pondělí 18:00–24:00 | 10 minut |
-| Úterý 06:00–14:00 | 10 minut |
-| Úterý 14:00–22:00 | 30 minut |
-| Ostatní dny 07:00–23:00 | 1 hodina |
-| Noc mimo hlavní publikační okno | 4 hodiny |
+| Úterý 06:00–22:00 | 10 minut |
+| Středa–neděle 07:00–23:00 | 30 minut |
+| Mimo uvedená publikační okna | 1 hodina |
 
 Cinema City uvádí, že nový program na období čtvrtek–středa zveřejňuje v úterý; v nápovědě také zmiňuje pondělí večer nebo úterý ráno. Rozvrh proto kontroluje nejčastěji v tomto publikačním okně a mimo něj omezuje zbytečné API požadavky. Kontroly jsou zarovnané jednu minutu po časovém slotu: hodinové běží v `HH:01`, desetiminutové v `:01`, `:11`, `:21` atd. a půlhodinové v `:01` a `:31`. Cinema City tak dostane krátký čas na dokončení aktualizace programu.
 
