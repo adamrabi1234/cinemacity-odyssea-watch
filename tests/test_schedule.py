@@ -1,9 +1,18 @@
 import os
+import json
+import tempfile
 import unittest
 from datetime import datetime
+from pathlib import Path
 from unittest.mock import patch
 
-from src.schedule import PRAGUE_TZ, fixed_interval_from_environment, seconds_until_next_check
+from src.schedule import (
+    PRAGUE_TZ,
+    atomic_write_state,
+    fixed_interval_from_environment,
+    schedule_state,
+    seconds_until_next_check,
+)
 
 
 def prague_datetime(weekday_date: str, hour: int, minute: int = 0) -> datetime:
@@ -69,6 +78,19 @@ class ScheduleTests(unittest.TestCase):
         with patch.dict(os.environ, {"WATCH_FIXED_INTERVAL_SECONDS": "often"}):
             with self.assertRaises(ValueError):
                 fixed_interval_from_environment()
+
+    def test_schedule_state_contains_nominal_interval_and_exact_next_check(self):
+        state = schedule_state(prague_datetime("2026-09-01", 18, 54))
+        self.assertEqual(state["interval_seconds"], 600)
+        self.assertEqual(state["sleep_seconds"], 420)
+        self.assertEqual(state["next_check_at"], "2026-09-01T19:01:00+02:00")
+
+    def test_schedule_state_is_written_as_json(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "schedule.json"
+            state = schedule_state(prague_datetime("2026-09-02", 12, 1))
+            atomic_write_state(path, state)
+            self.assertEqual(json.loads(path.read_text(encoding="utf-8")), state)
 
 
 if __name__ == "__main__":

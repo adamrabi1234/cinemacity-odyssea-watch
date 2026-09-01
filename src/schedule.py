@@ -3,12 +3,16 @@
 
 from __future__ import annotations
 
+import argparse
+import json
 import os
 from datetime import UTC, datetime, time, timedelta
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
 
 PRAGUE_TZ = ZoneInfo("Europe/Prague")
+DEFAULT_STATE = Path("data/schedule.json")
 
 
 def fixed_interval_from_environment() -> int | None:
@@ -89,15 +93,65 @@ def seconds_until_next_check(
     return max(1, int(wait + 0.999999))
 
 
-def main() -> None:
+def schedule_state(
+    now: datetime,
+    *,
+    fixed_interval_seconds: int | None = None,
+) -> dict[str, object]:
+    """Describe the currently active interval and exact next scheduled check."""
+    if now.tzinfo is None:
+        raise ValueError("now must be timezone-aware")
+    local_now = now.astimezone(PRAGUE_TZ)
+    sleep_seconds = seconds_until_next_check(
+        local_now,
+        fixed_interval_seconds=fixed_interval_seconds,
+    )
+    if fixed_interval_seconds is None:
+        interval_seconds = adaptive_window(local_now)[2]
+        mode = "adaptive"
+    else:
+        interval_seconds = fixed_interval_seconds
+        mode = "fixed"
+    next_check = local_now.astimezone(UTC) + timedelta(seconds=sleep_seconds)
+    return {
+        "schema_version": 1,
+        "status": "scheduled",
+        "mode": mode,
+        "calculated_at": local_now.isoformat(),
+        "interval_seconds": interval_seconds,
+        "sleep_seconds": sleep_seconds,
+        "next_check_at": next_check.astimezone(PRAGUE_TZ).isoformat(),
+    }
+
+
+def atomic_write_state(path: Path, state: dict[str, object]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.tmp")
+    temporary.write_text(
+        json.dumps(state, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    os.replace(temporary, path)
+
+
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--state",
+        type=Path,
+        help="Atomically write the active schedule and next check to this JSON file.",
+    )
+    args = parser.parse_args(argv)
     try:
-        interval = seconds_until_next_check(
+        state = schedule_state(
             datetime.now(PRAGUE_TZ),
             fixed_interval_seconds=fixed_interval_from_environment(),
         )
     except ValueError as exc:
         raise SystemExit(f"ERROR: {exc}") from exc
-    print(interval)
+    if args.state is not None:
+        atomic_write_state(args.state, state)
+    print(state["sleep_seconds"])
 
 
 if __name__ == "__main__":

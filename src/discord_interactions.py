@@ -10,6 +10,7 @@ import sys
 import threading
 import time
 from dataclasses import dataclass
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import quote
@@ -18,15 +19,20 @@ import requests
 from nacl.exceptions import BadSignatureError
 from nacl.signing import VerifyKey
 
+from src.schedule import PRAGUE_TZ, fixed_interval_from_environment, schedule_state
 from src.watch import WatchError, format_discord_line
 
 
 APP_ROOT = Path(__file__).resolve().parent.parent
 LATEST_PATH = APP_ROOT / "data" / "latest.json"
+SCHEDULE_PATH = APP_ROOT / "data" / "schedule.json"
 INTERACTION_PATH = "/discord/interactions"
 NEW_DATES_COMMAND = "newdates"
 ALL_DATES_COMMAND = "alldates"
-COMMAND_NAMES = frozenset({NEW_DATES_COMMAND, ALL_DATES_COMMAND})
+CHECK_DATES_COMMAND = "checkdates"
+COMMAND_NAMES = frozenset(
+    {NEW_DATES_COMMAND, ALL_DATES_COMMAND, CHECK_DATES_COMMAND}
+)
 EPHEMERAL_FLAG = 1 << 6
 MAX_REQUEST_BYTES = 64 * 1024
 MAX_SIGNATURE_AGE_SECONDS = 300
@@ -239,6 +245,77 @@ def command_payloads(
             }
         )
     return payloads
+
+
+def parse_datetime(value: object) -> datetime | None:
+    try:
+        parsed = datetime.fromisoformat(str(value))
+    except (TypeError, ValueError):
+        return None
+    if parsed.tzinfo is None:
+        return None
+    return parsed.astimezone(PRAGUE_TZ)
+
+
+def format_interval(seconds: int) -> str:
+    if seconds == 3600:
+        return "každou hodinu"
+    if seconds % 60 == 0:
+        minutes = seconds // 60
+        return f"každých {minutes} minut"
+    return f"každých {seconds} sekund"
+
+
+def discord_time(value: datetime) -> str:
+    unix_time = int(value.timestamp())
+    return f"<t:{unix_time}:F> (<t:{unix_time}:R>)"
+
+
+def checkdates_message(
+    *,
+    now: datetime | None = None,
+    latest_path: Path = LATEST_PATH,
+    schedule_path: Path = SCHEDULE_PATH,
+) -> str:
+    """Build a read-only schedule status message without running a live check."""
+    current = (now or datetime.now(PRAGUE_TZ)).astimezone(PRAGUE_TZ)
+    state: dict[str, Any] | None = None
+    try:
+        loaded = json.loads(schedule_path.read_text(encoding="utf-8"))
+        if isinstance(loaded, dict):
+            state = loaded
+    except (OSError, json.JSONDecodeError):
+        pass
+
+    next_check = parse_datetime((state or {}).get("next_check_at"))
+    interval = (state or {}).get("interval_seconds")
+    if (
+        next_check is None
+        or next_check < current - timedelta(seconds=5)
+        or not isinstance(interval, int)
+        or interval <= 0
+    ):
+        fallback = schedule_state(
+            current,
+            fixed_interval_seconds=fixed_interval_from_environment(),
+        )
+        next_check = parse_datetime(fallback["next_check_at"])
+        interval = int(fallback["interval_seconds"])
+    assert next_check is not None
+
+    try:
+        latest = json.loads(latest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        latest = {}
+    last_check = parse_datetime(latest.get("checked_at")) if isinstance(latest, dict) else None
+    last_check_text = discord_time(last_check) if last_check else "zatím není k dispozici"
+
+    return (
+        "📅 **Rozvrh automatických kontrol**\n"
+        f"**Aktuální interval:** {format_interval(interval)}\n"
+        f"**Poslední úspěšná kontrola:** {last_check_text}\n"
+        f"**Další kontrola:** {discord_time(next_check)}"
+    )
 
 
 def interaction_url(config: DiscordConfig, token: str, *, original: bool) -> str:

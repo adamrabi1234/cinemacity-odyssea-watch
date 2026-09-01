@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Replace guild commands with /newdates and /alldates."""
+"""Replace guild commands with the complete Cinema City command set."""
 
 from __future__ import annotations
 
@@ -36,6 +36,11 @@ def main() -> int:
         {
             "name": "alldates",
             "description": "Zkontroluje a zobrazí všechny aktuální termíny",
+            "type": 1,
+        },
+        {
+            "name": "checkdates",
+            "description": "Zobrazí interval a čas další automatické kontroly",
             "type": 1,
         },
     ]

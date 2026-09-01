@@ -1,16 +1,21 @@
 import json
+import tempfile
 import unittest
+from datetime import datetime
+from pathlib import Path
 
 import requests
 from nacl.signing import SigningKey
 
 from src.discord_interactions import (
     ALL_DATES_COMMAND,
+    CHECK_DATES_COMMAND,
     NEW_DATES_COMMAND,
     CommandLimiter,
     DiscordConfig,
     DiscordInteractionError,
     authorize_command,
+    checkdates_message,
     command_payloads,
     load_discord_config,
     send_interaction_payloads,
@@ -134,6 +139,9 @@ class DiscordInteractionTests(unittest.TestCase):
         self.assertIsNone(
             authorize_command(command_payload(ALL_DATES_COMMAND), config())
         )
+        self.assertIsNone(
+            authorize_command(command_payload(CHECK_DATES_COMMAND), config())
+        )
         self.assertIn(
             "Neznámý",
             authorize_command(command_payload("kontrola"), config()),
@@ -227,6 +235,31 @@ class DiscordInteractionTests(unittest.TestCase):
                 session=session,
             )
         self.assertEqual(session.calls, [])
+
+    def test_checkdates_reports_saved_schedule_without_live_check(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "schedule.json").write_text(
+                json.dumps(
+                    {
+                        "interval_seconds": 600,
+                        "next_check_at": "2026-09-01T19:01:00+02:00",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (root / "latest.json").write_text(
+                json.dumps({"checked_at": "2026-09-01T18:51:00+02:00"}),
+                encoding="utf-8",
+            )
+            message = checkdates_message(
+                now=datetime.fromisoformat("2026-09-01T18:54:00+02:00"),
+                schedule_path=root / "schedule.json",
+                latest_path=root / "latest.json",
+            )
+        self.assertIn("každých 10 minut", message)
+        self.assertIn("<t:1788282060:F>", message)
+        self.assertIn("<t:1788281460:F>", message)
 
 
 if __name__ == "__main__":

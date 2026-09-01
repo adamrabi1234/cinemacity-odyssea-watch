@@ -6,7 +6,7 @@ from src.register_discord_command import main
 
 
 class RegisterDiscordCommandsTests(unittest.TestCase):
-    def test_bulk_registration_replaces_old_command_with_two_new_commands(self):
+    def test_bulk_registration_replaces_old_command_with_complete_command_set(self):
         environment = {
             "DISCORD_APPLICATION_ID": "123456789012345678",
             "DISCORD_ALLOWED_GUILD_ID": "234567890123456789",
@@ -18,12 +18,16 @@ class RegisterDiscordCommandsTests(unittest.TestCase):
             request.return_value.json.return_value = [
                 {"name": "newdates", "id": "1"},
                 {"name": "alldates", "id": "2"},
+                {"name": "checkdates", "id": "3"},
             ]
             self.assertEqual(main(), 0)
 
         request.assert_called_once()
         payload = request.call_args.kwargs["json"]
-        self.assertEqual({command["name"] for command in payload}, {"newdates", "alldates"})
+        self.assertEqual(
+            {command["name"] for command in payload},
+            {"newdates", "alldates", "checkdates"},
+        )
         self.assertNotIn("kontrola", {command["name"] for command in payload})
 
 

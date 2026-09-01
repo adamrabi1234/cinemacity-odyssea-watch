@@ -12,11 +12,13 @@ from typing import Any
 from urllib.parse import urlsplit
 
 from src.discord_interactions import (
+    CHECK_DATES_COMMAND,
     INTERACTION_PATH,
     MAX_REQUEST_BYTES,
     CommandLimiter,
     DiscordInteractionError,
     authorize_command,
+    checkdates_message,
     complete_command,
     ephemeral_message,
     interaction_url,
@@ -148,6 +150,10 @@ class DataHandler(BaseHTTPRequestHandler):
             return
 
         command_name = str(payload["data"]["name"])
+
+        if command_name == CHECK_DATES_COMMAND:
+            self._send_json(200, ephemeral_message(checkdates_message()))
+            return
 
         reserved, reason, remaining = COMMAND_LIMITER.reserve()
         if not reserved:

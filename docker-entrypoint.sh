@@ -17,7 +17,7 @@ run_watcher
 
 (
   while true; do
-    interval="$(python src/schedule.py)" || exit 2
+    interval="$(python src/schedule.py --state data/schedule.json)" || exit 2
     echo "Next live Cinema City check in ${interval} seconds."
     sleep "$interval"
     run_watcher
